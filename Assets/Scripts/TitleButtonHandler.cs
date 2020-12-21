@@ -4,13 +4,32 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TitleButtonHandler : MonoBehaviour {
-    
-    public void newGame() {
+
+    public GameObject panel;
+    public GameObject newGameBtn;
+    public GameObject settingsBtn;
+    public GameObject exitBtn;
+
+    public void NewGame() {
         SceneManager.LoadSceneAsync("Game Scene");
     }
 
-    public void exitGame() {
+    public void Settings() {
+        panel.SetActive(true);
+        newGameBtn.SetActive(false);
+        settingsBtn.SetActive(false);
+        exitBtn.SetActive(false);
+    }
+
+    public void ExitGame() {
         Application.Quit();
         Debug.Log("Game is exiting...");
+    }
+
+    public void SettingsBack() {
+        panel.SetActive(false);
+        newGameBtn.SetActive(true);
+        settingsBtn.SetActive(true);
+        exitBtn.SetActive(true);
     }
 }
