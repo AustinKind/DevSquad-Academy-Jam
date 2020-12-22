@@ -11,7 +11,8 @@ public class TitleButtonHandler : MonoBehaviour {
     public GameObject exitBtn;
 
     public void NewGame() {
-        SceneManager.LoadSceneAsync("Game Scene");
+        SceneManager.LoadSceneAsync("Load Player");
+        SceneManager.LoadSceneAsync("Game Scene 1", LoadSceneMode.Additive);
     }
 
     public void Settings() {
