@@ -16,6 +16,7 @@ public class RigidbodyController : MonoBehaviour
     [SerializeField] private float radius = 0.5f;
     [SerializeField]  private Vector2 offset = Vector2.zero;
     [SerializeField, Range(0.0f, 1.0f)] private float stepOffset = 0.3f;
+    [SerializeField, Range(0, 90)] private int slopeLimit = 60;
 
     private bool grounded = false;
     public bool IsGrounded => grounded;
@@ -32,27 +33,48 @@ public class RigidbodyController : MonoBehaviour
         return (height - stepOffset) / 2f + stepOffset;
     }
 
-    float HeightToStepOffset(float distance)
+    float HeightToStepOffset()
     {
         //Get how much y-difference needed to adjust by to be at the offset
-        return (ActualHeight() - distance);
+        float actualRadius = (col.size.x / 2f) - 0.05f;
+        float xDif = hitInfo.hitPoint.x - col.bounds.center.x;
+        float xDifPercentage = xDif / actualRadius;
+        float adjust = -Mathf.Sqrt(1 - Mathf.Pow(xDifPercentage, 2)) + 1;
+        adjust *= actualRadius;
+
+        return ActualHeight() - (hitInfo.hitDistance + adjust);
     }
     
     bool CheckForGround(ref RaycastHitInfo hitInfo)
     {
         Vector3 pos = col.bounds.center; //Send from center of collider
         Vector3 dir = Vector3.down; //Shoot towards floor
-        float dis = ActualHeight() + 0.02f;
 
-        RaycastHit2D hit = Physics2D.Raycast(pos, dir, dis, collisionLayer);
+        float actualRadius = (col.size.x / 2f) - 0.05f;
+        float rayDis = ActualHeight() - actualRadius + 0.05f;
+        RaycastHit2D hit = Physics2D.CircleCast(pos, actualRadius, dir, rayDis, collisionLayer);
         if (hitInfo.hit = hit)
         {
-            hitInfo.hitDistance = hit.distance;
             hitInfo.hitPoint = hit.point;
-            hitInfo.hitNormal = hit.normal;
+
+            Vector2 rayPos = hit.point + (Vector2.up * 0.025f);
+
+            RaycastHit2D rayHit = Physics2D.Raycast(rayPos, dir, 0.05f, collisionLayer);
+            Debug.DrawRay(rayPos, dir * 0.05f, Color.blue);
+            hitInfo.hitNormal = (rayHit.collider) ? rayHit.normal : Vector2.up;
+
+            Vector2 playerPos = col.bounds.center; 
+            playerPos.x = hit.point.x;
+
+            hitInfo.hitDistance = Vector2.Distance(playerPos, hit.point);
         }
 
-        Debug.DrawRay(pos, dir * dis, (hitInfo.hit) ? Color.green : Color.red);
+        Color hitColor = (hitInfo.hit) ? Color.green : Color.red;
+        Vector3 circlePos = pos + (dir * rayDis);
+        Debug.DrawRay(pos, dir * rayDis, hitColor);
+        Debug.DrawRay(circlePos, dir * actualRadius, hitColor);
+        Debug.DrawRay(circlePos, Vector2.right * actualRadius, hitColor);
+        Debug.DrawRay(circlePos, Vector2.left * actualRadius, hitColor);
         return hitInfo.hit;
     }
 
@@ -66,7 +88,7 @@ public class RigidbodyController : MonoBehaviour
         if (!grounded)
             return vel;
 
-        vel.y = HeightToStepOffset(hitInfo.hitDistance) / Time.fixedDeltaTime;
+        vel.y = HeightToStepOffset() / Time.fixedDeltaTime;
         return vel;
     }
 
@@ -126,7 +148,27 @@ public class RigidbodyController : MonoBehaviour
     
     public void Move(Vector2 vel)
     {
-        //Move the rigidbody using velocity while keeping the step offset from the ground
+        //Adjust the movement to stick to the ground (slopes)
+        if (grounded)
+        {
+            //Get the angle of the ground
+            Vector2 groundAngle = new Vector2(Mathf.Sign(hitInfo.hitNormal.x) * hitInfo.hitNormal.y, -(Mathf.Sign(hitInfo.hitNormal.x) * hitInfo.hitNormal.x));
+            float angle = Mathf.Abs(Mathf.Atan2(hitInfo.hitNormal.x, hitInfo.hitNormal.y) * Mathf.Rad2Deg);
+            Debug.Log(angle);
+            if (angle < slopeLimit)
+            {
+                if (groundAngle.x < 0) groundAngle = -groundAngle; //Force the angle to be positive
+                Debug.DrawRay(transform.position, groundAngle, Color.blue);
+
+                //Remove left and right velocity but keep track of it
+                float xVel = vel.x;
+                vel.x = 0;
+
+                vel += (groundAngle * xVel);
+            }
+        }
+
+        //Move the rigid body using velocity while keeping the step offset from the ground
         rBody.velocity = vel + StepOffsetVelocity();
     }
 }

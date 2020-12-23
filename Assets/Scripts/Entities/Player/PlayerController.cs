@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     delegate void OnJumpAction();
     OnJumpAction onJump;
 
+    delegate void OnMovementAction(Vector2 input);
+    OnMovementAction onMovement;
+
     private void Start()
     {
         GetRequiredComponents();
@@ -26,5 +29,20 @@ public class PlayerController : MonoBehaviour
 
     void SetActions()
     {
+        onMovement += movement.Move;
+        onJump += movement.Jump;
+    }
+
+    private void Update()
+    {
+        ReadInputs();
+    }
+
+    void ReadInputs()
+    {
+        onMovement.Invoke(input.Movement);
+
+        if (input.Jump)
+            onJump.Invoke();
     }
 }
