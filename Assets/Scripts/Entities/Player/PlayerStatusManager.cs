@@ -6,6 +6,16 @@ public class PlayerStatusManager : MonoBehaviour
 {
     static PlayerStatusManager instance = null;
     private int hitpoints;
+    public int HitPoints => hitpoints;
+
+    private int maxHitpoints;
+    public int MaxHitpoints => maxHitpoints;
+
+    private bool isAlive;
+    public bool IsAlive => isAlive;
+
+    private int levelNumber;
+    public int LevelNumber => levelNumber;
 
     public static PlayerStatusManager Instance
     {
@@ -29,23 +39,14 @@ public class PlayerStatusManager : MonoBehaviour
         levelNumber = 1;
     }
 
-    public void modifyHealth(int change)
+    public void ModifyHealth(int change)
     {
-        hitpoints += change;
-        if (hitpoints > maxHitpoints)
-        {
-            hitpoints = maxHitpoints;
-        }
-        else if (hitpoints < 0)
+        hitpoints = Mathf.Clamp(hitpoints + change, 0, maxHitpoints);
+        
+        if (hitpoints <= 0)
         {
             hitpoints = 0;
             isAlive = false;
         }
     }
-
-    public int maxHitpoints { get; set; }
-
-    public bool isAlive { get; set; }
-
-    public int levelNumber { get; set; }
 }
