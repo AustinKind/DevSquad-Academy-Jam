@@ -59,7 +59,7 @@ public class RigidbodyController : MonoBehaviour
     Vector2 StepOffsetVelocity()
     {
         //Get the needed velocity to not fall below the step offset
-        Vector2 vel = Vector3.zero;
+        Vector2 vel = Vector2.zero;
         hitInfo = new RaycastHitInfo();
 
         grounded = CheckForGround(ref hitInfo);
