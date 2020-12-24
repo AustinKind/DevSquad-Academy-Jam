@@ -13,6 +13,8 @@ public class RigidbodyMovement : MonoBehaviour
     [SerializeField] protected float gravity = 20f;
     
     protected RigidbodyController controller;
+    public RigidbodyController Controller => controller;
+
     protected Vector2 moveDirection;
     public Vector2 MoveDirection => moveDirection;
 

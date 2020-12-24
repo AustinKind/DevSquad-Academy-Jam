@@ -62,7 +62,7 @@ public class PlayerLadderMovement : PlayerMovementType
     {
     }
 
-    public override void Jump(ref Vector2 moveDirection)
+    public override void Jump(ref Vector2 moveDirection, bool grounded)
     {
     }
 }

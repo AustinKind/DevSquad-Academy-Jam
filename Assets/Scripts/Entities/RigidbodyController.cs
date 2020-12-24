@@ -16,7 +16,9 @@ public class RigidbodyController : MonoBehaviour
     [SerializeField] private LayerMask jumpThroughLayer;
 
     [SerializeField] private float height = 2f;
+    public float Height => height;
     [SerializeField] private float radius = 0.5f;
+    public float Radius => radius;
     [SerializeField]  private Vector2 offset = Vector2.zero;
     [SerializeField, Range(0.0f, 1.0f)] private float stepOffset = 0.3f;
     [SerializeField, Range(0, 90)] private int slopeLimit = 60;

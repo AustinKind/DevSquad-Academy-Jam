@@ -11,10 +11,12 @@ public class PlayerMovement : RigidbodyMovement
     PlayerMovementType[] movements;
     delegate void CurrentMovementAction(Vector2 input, ref Vector2 moveDirection, bool grounded);
     delegate void CurrentFixedMovementAction(ref Vector2 moveDirection, bool grounded);
-    delegate void CurrentJumpAction(ref Vector2 moveDirection);
+    delegate void CurrentJumpAction(ref Vector2 moveDirection, bool grounded);
     CurrentFixedMovementAction currentFixedMovement = null;
     CurrentMovementAction currentMovement = null;
     CurrentJumpAction currentJump = null;
+
+    public bool freezeMovement = false;
 
     protected override void Start()
     {
@@ -40,15 +42,35 @@ public class PlayerMovement : RigidbodyMovement
         }
     }
 
+    public void FreezeMovement()
+    {
+        StartCoroutine(freezingMovement());
+        IEnumerator freezingMovement()
+        {
+            freezeMovement = true;
+            while(moveDirection.y > float.Epsilon && !controller.IsGrounded)
+                yield return null;
+            freezeMovement = false;
+        }
+    }
+
+    public void FreezeMovement(float seconds)
+    {
+        StartCoroutine(freezingMovement());
+        IEnumerator freezingMovement()
+        {
+            freezeMovement = true;
+            yield return new WaitForSeconds(seconds);
+            freezeMovement = false;
+        }
+    }
+
     public void Jump()
     {
-        //Do nothing if the player is not grounded
-        if (!controller.IsGrounded) return;
-
         if (currentJump == null)
             DefaultJump();
         else
-            currentJump.Invoke(ref moveDirection);
+            currentJump.Invoke(ref moveDirection, controller.IsGrounded);
     }
 
     public void Move(Vector2 input)
@@ -71,7 +93,12 @@ public class PlayerMovement : RigidbodyMovement
 
     void DefaultMovement(Vector2 input)
     {
-        moveDirection.x = input.x * moveSpeed;
+        if (freezeMovement) return;
+        float x = input.x * moveSpeed;
+        if (controller.IsGrounded)
+            moveDirection.x = x;
+        else if (Mathf.Abs(input.x) > 0.02f)
+            moveDirection.x = x;
     }
 
     void DefaultFixedMovement()
@@ -83,6 +110,7 @@ public class PlayerMovement : RigidbodyMovement
     }
     void DefaultJump()
     {
+        if (!controller.IsGrounded) return;
         moveDirection.y = jumpVelocity;
     }
 }
