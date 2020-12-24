@@ -3,20 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[DisallowMultipleComponent]
 [RequireComponent(typeof(RigidbodyController))]
 public class RigidbodyMovement : MonoBehaviour
 {
     [SerializeField] protected float moveSpeed = 4f;
+    public float MoveSpeed => moveSpeed;
+
     [SerializeField] protected float gravity = 20f;
+    
     protected RigidbodyController controller;
-
     protected Vector2 moveDirection;
+    public Vector2 MoveDirection => moveDirection;
 
-    private void Start()
+
+    protected virtual void Start()
     {
         GetRequiredComponents();
     }
-    private void GetRequiredComponents()
+    
+    protected void GetRequiredComponents()
     {
         controller = GetComponent<RigidbodyController>();
     }
@@ -28,6 +34,6 @@ public class RigidbodyMovement : MonoBehaviour
         else
             moveDirection.y = Mathf.Clamp(moveDirection.y, 0, float.MaxValue);
 
-        moveDirection = controller.Move(moveDirection);
+        moveDirection = controller.Move(moveDirection, true);
     }
 }

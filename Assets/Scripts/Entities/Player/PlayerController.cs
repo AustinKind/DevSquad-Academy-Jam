@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
     void ReadInputs()
     {
+        movement.UseThroughGround = (input.Movement.y >= -0.02f);
         onMovement.Invoke(input.Movement);
 
         if (input.Jump)

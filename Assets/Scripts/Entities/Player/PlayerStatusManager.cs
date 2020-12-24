@@ -42,7 +42,7 @@ public class PlayerStatusManager : MonoBehaviour
     public void ModifyHealth(int change)
     {
         hitpoints = Mathf.Clamp(hitpoints + change, 0, maxHitpoints);
-        
+
         if (hitpoints <= 0)
         {
             hitpoints = 0;

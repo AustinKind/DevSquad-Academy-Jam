@@ -6,11 +6,14 @@ using UnityEngine;
 ///  Will be a CharacterController like controller for rigidbody components
 ///  Adds support for more control and extra features not available when just using rigidbodies for movement
 /// </summary>
+[DisallowMultipleComponent]
 [RequireComponent(typeof(Rigidbody2D), typeof(CapsuleCollider2D))]
 public class RigidbodyController : MonoBehaviour
 {
     //Which layers should be used for collision finding
     [SerializeField] private LayerMask collisionLayer;
+    //Which layers should be used and be able to jump through
+    [SerializeField] private LayerMask jumpThroughLayer;
 
     [SerializeField] private float height = 2f;
     [SerializeField] private float radius = 0.5f;
@@ -45,14 +48,27 @@ public class RigidbodyController : MonoBehaviour
         return ActualHeight() - (hitInfo.hitDistance + adjust);
     }
     
-    bool CheckForGround(ref RaycastHitInfo hitInfo)
+    bool CheckForGround(ref RaycastHitInfo hitInfo, bool allowThroughGround)
     {
+        hitInfo = new RaycastHitInfo();
         Vector3 pos = col.bounds.center; //Send from center of collider
         Vector3 dir = Vector2.down; //Shoot towards floor
 
         float actualRadius = (col.size.x / 2f) - 0.05f;
         float rayDis = ActualHeight() - actualRadius + 0.05f;
-        RaycastHit2D hit = Physics2D.CircleCast(pos, actualRadius, dir, rayDis, collisionLayer);
+
+        LayerMask layers = collisionLayer;
+        if (allowThroughGround)
+        {
+            float throughLeeway = actualRadius / 4f;
+            RaycastHit2D throughHit = Physics2D.Raycast(transform.position + (Vector3)(Vector2.up * throughLeeway),
+                                                            Vector2.down, throughLeeway + 0.02f, jumpThroughLayer);
+            bool checkThroughGround = throughHit.collider;
+            if (checkThroughGround && rBody.velocity.y <= 1f)
+                layers = (LayerMask)(collisionLayer + jumpThroughLayer);
+        }
+
+        RaycastHit2D hit = Physics2D.CircleCast(pos, actualRadius, dir, rayDis, layers);
         if (hitInfo.hit = hit.collider)
         {
             hitInfo.hitPoint = hit.point;
@@ -82,9 +98,7 @@ public class RigidbodyController : MonoBehaviour
     {
         //Get the needed velocity to not fall below the step offset
         Vector2 vel = Vector2.zero;
-        hitInfo = new RaycastHitInfo();
 
-        grounded = CheckForGround(ref hitInfo);
         if (!grounded)
             return vel;
 
@@ -146,7 +160,7 @@ public class RigidbodyController : MonoBehaviour
         col.size = new Vector2(radius * 2f, height - stepOffset);
     }
     
-    public Vector2 Move(Vector2 vel)
+    public Vector2 Move(Vector2 vel, bool useThroughGround)
     {
         Vector2 moveVel = vel;
         //Adjust the movement to stick to the ground (slopes)
@@ -156,14 +170,17 @@ public class RigidbodyController : MonoBehaviour
             Vector2 groundAngle = new Vector2(Mathf.Sign(hitInfo.hitNormal.x) * hitInfo.hitNormal.y, -(Mathf.Sign(hitInfo.hitNormal.x) * hitInfo.hitNormal.x));
             float angle = Mathf.Abs(Mathf.Atan2(hitInfo.hitNormal.x, hitInfo.hitNormal.y) * Mathf.Rad2Deg);
 
-            if (groundAngle.x < 0) groundAngle = -groundAngle; //Force the angle to be positive
-            Debug.DrawRay(transform.position, groundAngle, Color.blue);
+            if (angle < slopeLimit)
+            {
+                if (groundAngle.x < 0) groundAngle = -groundAngle; //Force the angle to be positive
+                //Remove left and right velocity
+                vel.x = 0;
+                vel += (groundAngle * moveVel.x);
+            }
 
-            //Remove left and right velocity
-            vel.x = 0;
-            vel += (groundAngle * moveVel.x);
+            Debug.DrawRay(transform.position, groundAngle, Color.blue);
         }
-        else if(vel.y > 0)
+        else if (vel.y > 0) //Check above the controller and stop moving upwards if we hit something
         {
             Vector3 pos = col.bounds.center; //Send from center of collider
 
@@ -175,6 +192,7 @@ public class RigidbodyController : MonoBehaviour
         }
 
         //Move the rigid body using velocity while keeping the step offset from the ground
+        grounded = CheckForGround(ref hitInfo, useThroughGround);
         rBody.velocity = vel + StepOffsetVelocity();
         return moveVel;
     }
