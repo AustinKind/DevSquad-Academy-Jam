@@ -168,7 +168,7 @@ public class RigidbodyController : MonoBehaviour
             Vector3 pos = col.bounds.center; //Send from center of collider
 
             float actualRadius = (col.size.x / 2f) - 0.05f;
-            float rayDis = ActualHeight() - actualRadius + 0.125f;
+            float rayDis = ActualHeight() - actualRadius - stepOffset + 0.05f;
             RaycastHit2D hit = Physics2D.CircleCast(pos, actualRadius, Vector2.up, rayDis, collisionLayer);
             if (hit.collider)
                 vel.y = moveVel.y = 0;
