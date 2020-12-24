@@ -11,7 +11,6 @@ public class RigidbodyMovement : MonoBehaviour
     protected RigidbodyController controller;
 
     protected Vector2 moveDirection;
-    protected float verticalVelocity = 0;
 
     private void Start()
     {
@@ -25,11 +24,10 @@ public class RigidbodyMovement : MonoBehaviour
     protected virtual void FixedUpdate()
     {
         if (!controller.IsGrounded)
-            verticalVelocity -= gravity * Time.deltaTime;
+            moveDirection.y -= gravity * Time.deltaTime;
         else
-            verticalVelocity = Mathf.Clamp(verticalVelocity, 0, float.MaxValue);
+            moveDirection.y = Mathf.Clamp(moveDirection.y, 0, float.MaxValue);
 
-        moveDirection.y = verticalVelocity;
-        controller.Move(moveDirection);
+        moveDirection = controller.Move(moveDirection);
     }
 }
