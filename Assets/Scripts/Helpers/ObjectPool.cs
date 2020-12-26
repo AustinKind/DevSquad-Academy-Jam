@@ -29,6 +29,13 @@ public class ObjectPool
         poolParent.name = $"_{pooledObject.name}-Pool";
     }
 
+    public void ReturnToPool(int index)
+    {
+        PooledObject pObj = pool[index];
+        pObj.obj.SetActive(false);
+        pObj.currentlyInPool = true;
+    }
+
     public PooledObject GrabFromPool
     {
         get
@@ -44,7 +51,7 @@ public class ObjectPool
         }
     }
 
-    public PooledObject GrabUsableObject
+    PooledObject GrabUsableObject
     {
         get
         {
