@@ -95,18 +95,6 @@ public class RigidbodyController : MonoBehaviour
         return hitInfo.hit;
     }
 
-    Vector2 StepOffsetVelocity()
-    {
-        //Get the needed velocity to not fall below the step offset
-        Vector2 vel = Vector2.zero;
-
-        if (!grounded)
-            return vel;
-
-        vel.y = HeightToStepOffset / Time.fixedDeltaTime;
-        return vel;
-    }
-
     /// <summary>
     ///  Called anytime a change has been made to this component's variables in the inspector
     /// </summary>
@@ -194,7 +182,11 @@ public class RigidbodyController : MonoBehaviour
 
         //Move the rigid body using velocity while keeping the step offset from the ground
         grounded = CheckForGround(ref hitInfo, useThroughGround);
-        rBody.velocity = vel + StepOffsetVelocity();
+        
+        if (grounded)
+            rBody.velocity = new Vector2(vel.x, Mathf.Clamp(vel.y, HeightToStepOffset / Time.fixedDeltaTime, float.MaxValue));
+        else rBody.velocity = vel;
+
         return moveVel;
     }
 }
