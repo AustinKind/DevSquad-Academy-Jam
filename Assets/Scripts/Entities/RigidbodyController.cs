@@ -32,22 +32,21 @@ public class RigidbodyController : MonoBehaviour
     Rigidbody2D rBody;
     CapsuleCollider2D col;
 
-    float ActualHeight()
-    {
-        //Get the actual height that is to the floor
-        return (height - stepOffset) / 2f + stepOffset;
-    }
+    float ActualHeight => (height - stepOffset) / 2f + stepOffset;
 
-    float HeightToStepOffset()
+    float HeightToStepOffset
     {
-        //Get how much y-difference needed to adjust by to be at the offset
-        float actualRadius = (col.size.x / 2f) - 0.05f;
-        float xDif = hitInfo.hitPoint.x - col.bounds.center.x;
-        float xDifPercentage = xDif / actualRadius;
-        float adjust = -Mathf.Sqrt(1 - Mathf.Pow(xDifPercentage, 2)) + 1;
-        adjust *= actualRadius;
+        get
+        {
+            //Get how much y-difference needed to adjust by to be at the offset
+            float actualRadius = (col.size.x / 2f) - 0.05f;
+            float xDif = hitInfo.hitPoint.x - col.bounds.center.x;
+            float xDifPercentage = xDif / actualRadius;
+            float adjust = -Mathf.Sqrt(1 - Mathf.Pow(xDifPercentage, 2)) + 1;
+            adjust *= actualRadius;
 
-        return ActualHeight() - (hitInfo.hitDistance + adjust);
+            return ActualHeight - (hitInfo.hitDistance + adjust);
+        }
     }
     
     bool CheckForGround(ref RaycastHitInfo hitInfo, bool allowThroughGround)
@@ -57,7 +56,7 @@ public class RigidbodyController : MonoBehaviour
         Vector3 dir = Vector2.down; //Shoot towards floor
 
         float actualRadius = (col.size.x / 2f) - 0.05f;
-        float rayDis = ActualHeight() - actualRadius + 0.05f;
+        float rayDis = ActualHeight - actualRadius + 0.05f;
 
         LayerMask layers = collisionLayer;
         if (allowThroughGround)
@@ -104,7 +103,7 @@ public class RigidbodyController : MonoBehaviour
         if (!grounded)
             return vel;
 
-        vel.y = HeightToStepOffset() / Time.fixedDeltaTime;
+        vel.y = HeightToStepOffset / Time.fixedDeltaTime;
         return vel;
     }
 
@@ -187,7 +186,7 @@ public class RigidbodyController : MonoBehaviour
             Vector3 pos = col.bounds.center; //Send from center of collider
 
             float actualRadius = (col.size.x / 2f) - 0.05f;
-            float rayDis = ActualHeight() - actualRadius - stepOffset + 0.05f;
+            float rayDis = ActualHeight - actualRadius - stepOffset + 0.05f;
             RaycastHit2D hit = Physics2D.CircleCast(pos, actualRadius, Vector2.up, rayDis, collisionLayer);
             if (hit.collider)
                 vel.y = moveVel.y = 0;

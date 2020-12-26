@@ -73,7 +73,7 @@ public class CameraController : MonoBehaviour
         foreach (Area bound in collisionBounds)
             bound.RepelArea(ref cameraBounds);
 
-        transform.position = Vector3.SlerpUnclamped(transform.position, cameraBounds.Center, Time.deltaTime * cameraFollowSpeed);
+        transform.position = Vector3.Lerp(transform.position, cameraBounds.Center, Time.deltaTime * cameraFollowSpeed);
     }
 
     public float CalculateStrength(float dis)
