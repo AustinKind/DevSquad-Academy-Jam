@@ -36,8 +36,9 @@ public class ObjectPool
             PooledObject obj = GrabUsableObject;
             if (obj == null)
             {
-                obj = new PooledObject(GameObject.Instantiate(pooledObject, poolParent));
+                obj = new PooledObject(GameObject.Instantiate(pooledObject, poolParent), pool.Count);
                 obj.currentlyInPool = false;
+                pool.Add(obj);
             }
             return obj;
         }
@@ -65,9 +66,13 @@ public class PooledObject
     public GameObject obj;
     public bool currentlyInPool = true;
 
-    public PooledObject(GameObject o)
+    int index;
+    public int Index => index;
+
+    public PooledObject(GameObject o, int i)
     {
         currentlyInPool = true;
+        index = i;
         obj = o;
     }
 }
