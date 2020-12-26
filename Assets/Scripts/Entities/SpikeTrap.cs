@@ -33,15 +33,13 @@ public class SpikeTrap : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D (Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Player"))
+        Damageable dmgObj = null;
+        if ((dmgObj = col.GetComponent<Damageable>()) != null)
         {
-            Damageable dmgObj = null;
-            if ((dmgObj = col.GetComponent<Damageable>()) != null)
-            {
+            if(dmgObj as PlayerDamage)
                 dmgObj.Hurt(damage);
-            }
         }
     }
 }
