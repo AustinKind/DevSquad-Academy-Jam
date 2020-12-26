@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    [Range(0.0f, 1.0f)]
-    public float distance = 1f;
-    [Range(0.0f, 1.0f)]
-    public float radius = 0.25f;
+    public Area area1;
+    public Area[] block;
 
-    public void Update()
+    private void OnDrawGizmos()
     {
-        float d = Mathf.Clamp(distance - radius, 0f, Mathf.Max(distance, radius));
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, radius, Vector2.down, d);
+        bool overlapping = false;
+        for (int i = 0; i < block.Length; i++)
+        {
+            block[i].RepelArea(ref area1);
+            Gizmos.color = Area.IsInArea(area1, block[i]) ? new Color(1, 0, 0, 0.125f) : Color.green;
+            block[i].DrawGizmo();
+        }
 
-        Color hitColor = (hit) ? Color.green : Color.red;
-        Debug.DrawRay(transform.position + (Vector3)(Vector2.down * d), Vector2.right * radius, hitColor);
-        Debug.DrawRay(transform.position + (Vector3)(Vector2.down * d), Vector2.left * radius, hitColor);
-        Debug.DrawRay(transform.position, Vector2.down * d, hitColor);
+        Gizmos.color = overlapping ? new Color(1, 0, 0, 0.125f) : Color.green;
+        area1.DrawGizmo();
     }
 }
