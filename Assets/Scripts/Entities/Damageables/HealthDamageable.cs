@@ -7,6 +7,7 @@ public class HealthDamageable : Damageable
     [SerializeField] private int health;
     public override void Hurt(int dmg)
     {
+        base.Hurt(dmg);
         health = Mathf.Clamp(health - dmg, 0, int.MaxValue);
         if (health <= 0)
             Destroy(gameObject);

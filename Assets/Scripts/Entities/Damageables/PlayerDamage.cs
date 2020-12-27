@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerDamage : Damageable
 {
-    public delegate void OnHurtAction();
-    public OnHurtAction onHurt;
+    public override void Start()
+    {
+        base.Start();
+    }
 
     public override void Hurt(int dmg)
     {
+        base.Hurt(dmg);
         PlayerStatusManager.Instance.ModifyHealth(-dmg);
-        onHurt.Invoke();
     }
 }
