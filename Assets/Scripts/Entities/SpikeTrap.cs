@@ -5,7 +5,6 @@ using UnityEditor;
 
 public class SpikeTrap : MonoBehaviour
 {
-    public Animator animator;
 
     // How many spikes in a row their are.
     [SerializeField, Range(1, 10)] private int numberOfSpikes = 1;
@@ -19,8 +18,9 @@ public class SpikeTrap : MonoBehaviour
     [SerializeField] private int damage = 1;
 
     BoxCollider2D col;
+    Animator animator;
     SpriteRenderer rend;
-    
+
     BoxCollider2D[] extraColliders;
 
     void Start ()
@@ -56,7 +56,7 @@ public class SpikeTrap : MonoBehaviour
             }
             catch (MissingReferenceException)
             {
-
+                //Boi this is fucking ugly to have haha
             }
         };
     }
@@ -70,7 +70,6 @@ public class SpikeTrap : MonoBehaviour
 
     /// <summary>
     /// Creates all the colliders for the number of spikes chosen, all except the first one, which is controlled by animation
-    /// These are placed in a child object within this one that stores all the extra colliders as to not cramp the parent object
     /// </summary>
     void CreateExtraColliders()
     {
@@ -123,8 +122,7 @@ public class SpikeTrap : MonoBehaviour
         Damageable dmgObj = null;
         if ((dmgObj = col.GetComponent<Damageable>()) != null)
         {
-            if(dmgObj as PlayerDamage)
-                dmgObj.Hurt(damage);
+           dmgObj.Hurt(damage);
         }
     }
 }

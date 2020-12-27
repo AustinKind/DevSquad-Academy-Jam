@@ -116,7 +116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2fbf04ddb26429468b0e5f6c8efaba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 4669804814363612740}
   numberOfSpikes: 1
   idleTime: 2
   readyTime: 1
