@@ -21,7 +21,6 @@ public class SpikeTrap : MonoBehaviour
     BoxCollider2D col;
     SpriteRenderer rend;
     
-    Transform extraColliderHolder;
     BoxCollider2D[] extraColliders;
 
     void Start ()
@@ -38,20 +37,27 @@ public class SpikeTrap : MonoBehaviour
     {
         EditorApplication.delayCall += () =>
         {
-            GetRequiredComponents();
-            col.offset = new Vector2(-(numberOfSpikes - 1) / 2f, col.offset.y);
-
-            bool multiple = (numberOfSpikes > 1);
-            rend.drawMode = multiple ? SpriteDrawMode.Tiled : SpriteDrawMode.Simple;
-            if (multiple)
+            try
             {
-                rend.size = new Vector2(numberOfSpikes, 1);
-                rend.tileMode = SpriteTileMode.Continuous;
-            }
-            else
-                rend.size = Vector2.one;
+                GetRequiredComponents();
+                col.offset = new Vector2(-(numberOfSpikes - 1) / 2f, col.offset.y);
 
-            transform.localScale = Vector3.one;
+                bool multiple = (numberOfSpikes > 1);
+                rend.drawMode = multiple ? SpriteDrawMode.Tiled : SpriteDrawMode.Simple;
+                if (multiple)
+                {
+                    rend.size = new Vector2(numberOfSpikes, 1);
+                    rend.tileMode = SpriteTileMode.Continuous;
+                }
+                else
+                    rend.size = Vector2.one;
+
+                transform.localScale = Vector3.one;
+            }
+            catch (MissingReferenceException)
+            {
+
+            }
         };
     }
 
@@ -68,19 +74,15 @@ public class SpikeTrap : MonoBehaviour
     /// </summary>
     void CreateExtraColliders()
     {
-        if (extraColliderHolder == null)
-        {
-            extraColliderHolder = new GameObject().transform;
-            extraColliderHolder.SetParent(this.transform);
-            extraColliderHolder.localPosition = Vector3.zero;
-            extraColliderHolder.name = "_ExtraColliders";
-        }
-
         List<BoxCollider2D> extras = new List<BoxCollider2D>();
         
         extras.Add(col);
         for (int i = 1; i < numberOfSpikes; i++)
-            extras.Add(extraColliderHolder.gameObject.AddComponent<BoxCollider2D>());
+        {
+            BoxCollider2D add = gameObject.AddComponent<BoxCollider2D>();
+            add.isTrigger = true;
+            extras.Add(add);
+        }
 
         for(int i = 1; i < numberOfSpikes; i++)
         {
