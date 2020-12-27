@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 1855112799}
   - component: {fileID: 1855112801}
   - component: {fileID: 1855112802}
-  m_Layer: 10
+  m_Layer: 30
   m_Name: Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,3 +677,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8769be90c941044b605f077c07456d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTriggered: 0

@@ -5,24 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
-    private bool isTriggered = false;
-    private GameObject player;
+    public bool isTriggered = false;
 
-    private void OnTriggerEnter2D (Collider2D collider)
+    private void OnTriggerEnter2D (Collider2D col)
     {
-        if (collider.tag == "Player")
+        if (col.CompareTag("Player"))
             isTriggered = true;
     }
 
-    private void OnTriggerExit2D (Collider2D collider)
+    private void OnTriggerExit2D (Collider2D col)
     {
-        if (collider.tag == "Player")
+        if (col.CompareTag("Player"))
             isTriggered = false;
-    }
-
-    void Start ()
-    {
-        player = GameObject.FindWithTag("Player");
     }
 
     void Update ()
@@ -30,10 +24,20 @@ public class Portal : MonoBehaviour
         // If player is on top of portal and clicks up, teleport them to next level
         if (isTriggered && Input.GetKeyDown(KeyCode.UpArrow) == true)
         {
-            // Add code to determine what scene to load based on player progress
-            SceneManager.UnloadSceneAsync("Game Scene 1");
-            player.transform.position = new Vector3(-7.5f, -2.36f, 0);
-            SceneManager.LoadSceneAsync("Game Scene 2", LoadSceneMode.Additive);
+            StartCoroutine("NextLevel");      
         }
+    }
+
+    IEnumerator NextLevel()
+    {
+        // TODO: Determine what scene to load based on player progress
+        // TODO: Keep track of what game scene is currently loaded
+        
+        AsyncOperation loadScene = SceneManager.LoadSceneAsync("Game Scene 2", LoadSceneMode.Additive);
+        while (!loadScene.isDone)
+            yield return null;
+        AsyncOperation unloadScene = SceneManager.UnloadSceneAsync("Game Scene 1");
+        while (!unloadScene.isDone)
+            yield return null;
     }
 }
