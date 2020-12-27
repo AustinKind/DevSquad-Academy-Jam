@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1015360700711276137}
   - component: {fileID: 1015360700711276134}
   - component: {fileID: 1015360700711276135}
-  m_Layer: 0
-  m_Name: DestructableBlock
+  m_Layer: 9
+  m_Name: test_block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
