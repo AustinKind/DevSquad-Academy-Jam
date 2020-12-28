@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public abstract class Gun : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract void Shoot(Vector2 dir);
+    public abstract void Reload();
 }

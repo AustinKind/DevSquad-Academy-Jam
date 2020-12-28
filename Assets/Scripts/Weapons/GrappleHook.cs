@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrappleHook : MonoBehaviour
+public class GrappleHook : Gun
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public override void Start()
     {
-        
+        base.Start();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Shoot(Vector2 dir)
     {
-        
     }
+    public override void Reload()
+    {
+    }
+
 }
