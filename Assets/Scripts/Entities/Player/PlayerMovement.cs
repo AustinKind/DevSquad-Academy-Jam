@@ -18,9 +18,10 @@ public class PlayerMovement : RigidbodyMovement
 
     public bool freezeMovement = false;
 
-    protected override void Start()
+    protected override void GetRequiredComponents()
     {
-        base.Start();
+        base.GetRequiredComponents();
+
         movements = GetComponentsInChildren<PlayerMovementType>();
         foreach (PlayerMovementType moveType in movements)
             moveType.Initialize(this);

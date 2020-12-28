@@ -30,6 +30,8 @@ public class RigidbodyController : MonoBehaviour
 
     //Components
     Rigidbody2D rBody;
+    public Rigidbody2D Rigidbody => rBody;
+
     CapsuleCollider2D col;
 
     float ActualHeight => (height - stepOffset) / 2f + stepOffset;
@@ -100,21 +102,25 @@ public class RigidbodyController : MonoBehaviour
     /// </summary>
     private void OnValidate()
     {
-        GetComponents();
+        GetRequiredComponents();
         ForceRigidbodyCompliance();
         ValidateColliderValues();
         UpdateColliderBounds();
     }
 
+    private void Start()
+    {
+        GetRequiredComponents();
+    }
+
     /// <summary>
     ///  Get the required components fot the script
     /// </summary>
-    void GetComponents()
+    void GetRequiredComponents()
     {
         rBody = GetComponent<Rigidbody2D>();
         col = GetComponent<CapsuleCollider2D>();
     }
-
 
     /// <summary>
     ///  Make sure the rigidbody is set correctly for this type of controlled movement

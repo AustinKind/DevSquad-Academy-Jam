@@ -24,7 +24,7 @@ public class RigidbodyMovement : MonoBehaviour
         GetRequiredComponents();
     }
     
-    protected void GetRequiredComponents()
+    protected virtual void GetRequiredComponents()
     {
         controller = GetComponent<RigidbodyController>();
     }

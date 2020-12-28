@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     PlayerInput input;
     PlayerMovement movement;
+    PlayerAnimator animator;
 
     delegate void OnJumpAction();
     OnJumpAction onJump;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         input = GetComponent<PlayerInput>();
         movement = GetComponent<PlayerMovement>();
+        animator = GetComponentInChildren<PlayerAnimator>();
     }
 
     void SetActions()
@@ -36,6 +38,8 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         ReadInputs();
+
+        animator.UpdateAnimator(movement.Controller.Rigidbody.velocity, movement.Controller.IsGrounded);
     }
 
     void ReadInputs()
