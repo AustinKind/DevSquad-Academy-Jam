@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     PlayerInput input;
     PlayerMovement movement;
     PlayerAnimator animator;
+    GunController gunController;
 
     delegate void OnJumpAction();
     OnJumpAction onJump;
@@ -27,12 +28,15 @@ public class PlayerController : MonoBehaviour
         input = GetComponent<PlayerInput>();
         movement = GetComponent<PlayerMovement>();
         animator = GetComponentInChildren<PlayerAnimator>();
+        gunController = GetComponentInChildren<GunController>();
     }
 
     void SetActions()
     {
         onMovement += movement.Move;
         onJump += movement.Jump;
+
+        gunController.ActivateTimeScaler(() => { return input.SelectWeapon; });
     }
 
     private void Update()
@@ -49,5 +53,9 @@ public class PlayerController : MonoBehaviour
 
         if (input.Jump)
             onJump.Invoke();
+
+        gunController.OpenWeaponWheel(input.SelectWeapon);
+
+        gunController.ShootInput(input.Shoot);
     }
 }
