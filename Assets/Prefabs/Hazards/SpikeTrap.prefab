@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfSpikes: 1
+  initialDelay: 0
   idleTime: 2
   readyTime: 1
   impaledTime: 2
