@@ -40,7 +40,7 @@ public class GrappleHook : Gun
 
     public override void Shoot(Vector2 dir)
     {
-        if (grappling || !canShootGun) return;
+        if (grappling) return;
         grappleDir = dir;
 
         hookTime = 0f;
