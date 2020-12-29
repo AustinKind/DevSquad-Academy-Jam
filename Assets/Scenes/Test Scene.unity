@@ -3228,15 +3228,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 349295853, guid: 54829a041d2e7ce4baedbbda7a8663fb, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 3670118962108840098, guid: 820ccce6af6b8ba41ab5768f1dbff598,
-        type: 3}
     - target: {fileID: 1428636223, guid: 54829a041d2e7ce4baedbbda7a8663fb, type: 3}
       propertyPath: wheelUI
       value: 
       objectReference: {fileID: 725079711}
+    - target: {fileID: 4780052488497457697, guid: 54829a041d2e7ce4baedbbda7a8663fb,
+        type: 3}
+      propertyPath: swingSpeed.max
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5476306864017694305, guid: 54829a041d2e7ce4baedbbda7a8663fb,
         type: 3}
       propertyPath: m_RootOrder

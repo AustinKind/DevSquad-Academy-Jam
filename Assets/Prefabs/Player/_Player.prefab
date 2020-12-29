@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunShootType: 0
-  firerate: 1
-  bullet: {fileID: 0}
+  firerate: 0.25
+  bullet: {fileID: 3670118962108840098, guid: 820ccce6af6b8ba41ab5768f1dbff598, type: 3}
+  spawnOffset: {x: 0, y: 0.625}
   bulletForce: 8
 --- !u!1 &499982553
 GameObject:
@@ -757,8 +758,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793457e4c0a9b284ea7eb0d751df2190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swingSpeed: 4
+  swingSpeed:
+    min: 3
+    max: 9
   jumpVelocity: 8
+  minimumSwingRadius: 0.5
 --- !u!114 &5476306864017694314
 MonoBehaviour:
   m_ObjectHideFlags: 0

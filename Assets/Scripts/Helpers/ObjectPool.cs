@@ -44,7 +44,11 @@ public class ObjectPool
             if (obj == null)
             {
                 obj = new PooledObject(GameObject.Instantiate(pooledObject, poolParent), pool.Count);
+
+                PooledObjectRef pRef = obj.obj.AddComponent<PooledObjectRef>();
+                pRef.Initialize(this, pool.Count);
                 obj.currentlyInPool = false;
+
                 pool.Add(obj);
             }
             return obj;
@@ -59,6 +63,7 @@ public class ObjectPool
             {
                 if (pool[i].currentlyInPool)
                 {
+                    pool[i].obj.SetActive(true);
                     pool[i].currentlyInPool = false;
                     return pool[i];
                 }

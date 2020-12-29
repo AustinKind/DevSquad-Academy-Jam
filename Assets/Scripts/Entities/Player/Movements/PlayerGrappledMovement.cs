@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerGrappledMovement : PlayerMovementType
 {
-    [SerializeField] private float swingSpeed = 4f;
+    [SerializeField] private FloatRange swingSpeed = new FloatRange(4, 6);
     [SerializeField] private float jumpVelocity = 8f;
     [SerializeField] private float minimumSwingRadius = 0.25f;
 
@@ -12,6 +12,7 @@ public class PlayerGrappledMovement : PlayerMovementType
     Vector2 difference;
     bool startedMoving = false;
     bool flipped = false;
+    float speed;
     float dis;
 
     private void Start()
@@ -23,7 +24,7 @@ public class PlayerGrappledMovement : PlayerMovementType
     {
         moveDirection.y = jumpVelocity;
         startedMoving = false;
-        grapple.Unhook();
+        grapple.Unhook(true);
     }
 
     public override void Movement(Vector2 input, ref Vector2 moveDirection, bool grounded)
@@ -31,8 +32,7 @@ public class PlayerGrappledMovement : PlayerMovementType
         //TODO
         int direction = (flipped) ? -1 : 1;
 
-
-        float adjust = (swingSpeed * direction * Time.deltaTime);
+        float adjust = (speed * direction * Time.deltaTime);
         float percent = Mathf.Clamp(difference.x / dis, -1f, 1f);
         difference.y = -Mathf.Sqrt(1 - Mathf.Pow(percent, 2)) + 1;
 
@@ -49,7 +49,7 @@ public class PlayerGrappledMovement : PlayerMovementType
         Vector3 moveTo = (grapple.HookTransform.position + (Vector3)offset);
         Debug.DrawLine(transform.position, moveTo, Color.red);
         //PLACEHOLDER MOVEMENT
-        moveDirection = (moveTo - transform.position) / (Time.fixedDeltaTime * swingSpeed);
+        moveDirection = (moveTo - transform.position) / (Time.fixedDeltaTime * speed);
     }
 
     public override bool ShouldUseMovement()
@@ -63,6 +63,10 @@ public class PlayerGrappledMovement : PlayerMovementType
             difference.x = dif.x;
             flipped = (difference.x >= 0);
             dis = Mathf.Clamp(dif.magnitude, minimumSwingRadius, grapple.GrappleLength);
+
+            float disPercent = (dis - minimumSwingRadius) / (grapple.GrappleLength - minimumSwingRadius);
+            speed = swingSpeed.EvaluatePercent(disPercent);
+            Debug.Log(speed);
             startedMoving = true;
         }
 

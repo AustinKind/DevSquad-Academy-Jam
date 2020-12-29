@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    PooledObjectRef poolRef;
+
+    void Start()
+    {
+        poolRef = GetComponent<PooledObjectRef>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Damageable dmgObj = null;
@@ -11,5 +18,7 @@ public class Bullet : MonoBehaviour
         {
             dmgObj.Hurt(5);
         }
+
+        if (poolRef) poolRef.PlaceBackInPool();
     }
 }

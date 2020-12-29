@@ -23,5 +23,10 @@ public class FloatRange
         value = Mathf.Clamp(value, min, max);
     }
 
+    public float EvaluatePercent(float percent)
+    {
+        return (Difference * percent) + min;
+    }
+
     public float Difference => (max - min);
 }

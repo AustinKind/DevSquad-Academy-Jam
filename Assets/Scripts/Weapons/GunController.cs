@@ -67,7 +67,7 @@ public class GunController : MonoBehaviour
 
             GrappleHook hook = null;
             if (!isCurrent && (hook = indexedGun as GrappleHook) != null)
-                hook.Unhook();
+                hook.Unhook(false);
         }
 
         currentGun = weaponCache[currentWeapon - 1];
