@@ -54,13 +54,13 @@ public class GrappleHook : Gun
 
     public void Unhook()
     {
-        StartCoroutine(RegisterShot());
-        grappleLine.SetPosition(1, hookOffset);
-        hookTransform.gameObject.SetActive(grappling = false);
-
         hooked = false;
         hookTransform.SetParent(transform);
-        hookTransform.localPosition = Vector3.zero;
+        hookTransform.localPosition = hookOffset;
+
+        grappleLine.SetPosition(1, hookOffset);
+        hookTransform.gameObject.SetActive(grappling = false);
+        StartCoroutine(RegisterShot());
     }
 
     private void Update()
