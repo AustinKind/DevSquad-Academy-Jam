@@ -2904,7 +2904,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1673349255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 6.5, z: 0}
+  m_LocalPosition: {x: -0.5, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4132,22 +4132,32 @@ PrefabInstance:
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: cameraBounds.size.x
-      value: 17.758621
+      value: 17.77027
       objectReference: {fileID: 0}
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: cameraBounds.origin.x
-      value: -5.99
+      value: -5.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: cameraBounds.origin.y
+      value: 7.3100004
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: followBounds.origin.x
+      value: -1.75
       objectReference: {fileID: 0}
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: followBounds.origin.y
-      value: 1.0250001
+      value: -4.375
       objectReference: {fileID: 0}
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: collisionBounds.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
@@ -4162,11 +4172,21 @@ PrefabInstance:
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: collisionBounds.Array.data[2].size.x
-      value: 4.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: collisionBounds.Array.data[2].size.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: collisionBounds.Array.data[3].size.x
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: collisionBounds.Array.data[3].size.y
       value: 11.25
       objectReference: {fileID: 0}
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
@@ -4182,11 +4202,21 @@ PrefabInstance:
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: collisionBounds.Array.data[2].origin.x
-      value: -20.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: collisionBounds.Array.data[2].origin.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: collisionBounds.Array.data[3].origin.x
+      value: -20.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: collisionBounds.Array.data[3].origin.y
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3997078745950439779, guid: c2e67d806cb2eb44abf2198dfb640c20,
