@@ -6,11 +6,13 @@ public class PlayerGrappledMovement : PlayerMovementType
 {
     [SerializeField] private float swingSpeed = 4f;
     [SerializeField] private float jumpVelocity = 8f;
+    [SerializeField] private float minimumSwingRadius = 0.25f;
 
     GrappleHook grapple;
     Vector2 difference;
     bool startedMoving = false;
     bool flipped = false;
+    float dis;
 
     private void Start()
     {
@@ -30,7 +32,6 @@ public class PlayerGrappledMovement : PlayerMovementType
         int direction = (flipped) ? -1 : 1;
 
 
-        float dis = grapple.GrappleLength;
         float adjust = (swingSpeed * direction * Time.deltaTime);
         float percent = Mathf.Clamp(difference.x / dis, -1f, 1f);
         difference.y = -Mathf.Sqrt(1 - Mathf.Pow(percent, 2)) + 1;
@@ -58,9 +59,10 @@ public class PlayerGrappledMovement : PlayerMovementType
         bool grappled = grapple.IsHooked;
         if(grappled && !startedMoving)
         {
-            difference.x = (transform.position.x - grapple.HookTransform.position.x);
+            Vector2 dif = (transform.position - grapple.HookTransform.position);
+            difference.x = dif.x;
             flipped = (difference.x >= 0);
-
+            dis = Mathf.Clamp(dif.magnitude, minimumSwingRadius, grapple.GrappleLength);
             startedMoving = true;
         }
 

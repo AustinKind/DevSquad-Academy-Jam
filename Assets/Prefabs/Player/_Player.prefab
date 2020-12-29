@@ -45,6 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunShootType: 0
   firerate: 1
+  bullet: {fileID: 0}
+  bulletForce: 8
 --- !u!1 &499982553
 GameObject:
   m_ObjectHideFlags: 0

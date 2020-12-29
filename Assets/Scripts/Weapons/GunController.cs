@@ -23,6 +23,7 @@ public class GunController : MonoBehaviour
     bool wheelOpen = false;
 
 
+    Gun currentGun;
     Vector2 previousInput = Vector2.zero;
     Vector2 oldInput = Vector2.zero;
     bool semiShot = true;
@@ -58,8 +59,18 @@ public class GunController : MonoBehaviour
 
     private void OnWeaponChange()
     {
-        for(int i = 0; i < weaponCache.Length; i++)
-            weaponCache[i].gameObject.SetActive(i == currentWeapon - 1);
+        for (int i = 0; i < weaponCache.Length; i++)
+        {
+            bool isCurrent = (i == currentWeapon - 1);
+            Gun indexedGun = weaponCache[i];
+            indexedGun.gameObject.SetActive(isCurrent);
+
+            GrappleHook hook = null;
+            if (!isCurrent && (hook = indexedGun as GrappleHook) != null)
+                hook.Unhook();
+        }
+
+        currentGun = weaponCache[currentWeapon - 1];
     }
 
     public void ShootInput(Vector2 input)
@@ -78,7 +89,6 @@ public class GunController : MonoBehaviour
         }
         else if(singleInput.magnitude > 0)
         {
-            Gun currentGun = weaponCache[currentWeapon - 1];
             bool fullAuto = (currentGun.gunShootType == GunType.auto);
             bool shoot = fullAuto ? true : semiShot;
 
