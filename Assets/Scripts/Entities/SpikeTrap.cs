@@ -8,6 +8,8 @@ public class SpikeTrap : MonoBehaviour
 
     // How many spikes in a row their are.
     [SerializeField, Range(1, 10)] private int numberOfSpikes = 1;
+    // Initial delay before starting the spike trap.
+    [SerializeField] private float initialDelay = 0;
     // How long the spikes are retracted for.
     [SerializeField] private float idleTime = 4;
     // How long the spikes are in the ready state.
@@ -96,6 +98,7 @@ public class SpikeTrap : MonoBehaviour
 
     IEnumerator SpikeCycle ()
     {
+        yield return new WaitForSeconds(initialDelay);
         while (true)
         {
             yield return new WaitForSeconds(idleTime);
