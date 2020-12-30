@@ -799,3 +799,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737bd22f785ea3c4b896ccf8d3c15a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invulnerabilityTime: 2
+  intervalTime: 0.25
+  flashingColor: {r: 1, g: 0.1, b: 0.1, a: 0.39}
