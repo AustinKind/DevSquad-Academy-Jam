@@ -32,14 +32,14 @@ public class PlayerGrappledMovement : PlayerMovementType
         //TODO
         int direction = (flipped) ? -1 : 1;
 
-        float adjust = (direction * Time.deltaTime * speed);
+        float adjust = (direction * Time.fixedDeltaTime);
         float percent = Mathf.Clamp(difference.x / dis, -1f, 1f);
         difference.y = -Mathf.Sqrt(1 - Mathf.Pow(percent, 2)) + 1;
 
         Vector2 offset = new Vector2(percent, difference.y) * dis;
         offset -= Vector2.up * dis;
 
-        adjust *= Mathf.Clamp(Mathf.Abs(difference.y - 1f), 0.1f, 1f);
+        adjust *= Mathf.Pow(Mathf.Clamp(Mathf.Abs(difference.y - 1f), 0.1f, 1f), 2) * speed;
         difference.x = Mathf.Clamp(difference.x + adjust, -dis, dis);
 
         if (flipped && difference.x <= -dis && difference.y >= 1f) flipped = false;
@@ -49,7 +49,7 @@ public class PlayerGrappledMovement : PlayerMovementType
         Vector3 moveTo = (grapple.HookTransform.position + (Vector3)offset);
         Debug.DrawLine(transform.position, moveTo, Color.red);
         //PLACEHOLDER MOVEMENT
-        moveDirection = (moveTo - transform.position) / (Time.deltaTime * speed);
+        moveDirection = (moveTo - transform.position) / (Time.fixedDeltaTime * speed);
     }
 
     public override bool ShouldUseMovement()
