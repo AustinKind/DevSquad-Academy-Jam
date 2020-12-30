@@ -54,8 +54,9 @@ public class GrappleHook : Gun
 
     public void Unhook(bool shot)
     {
-        if(shot)
+        if (shot)
             StartCoroutine(RegisterShot());
+        else canShootGun = true;
 
         hooked = false;
         hookTransform.SetParent(transform);
