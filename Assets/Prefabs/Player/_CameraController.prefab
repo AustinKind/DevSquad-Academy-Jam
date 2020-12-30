@@ -47,21 +47,25 @@ MonoBehaviour:
   target: {fileID: 0}
   cameraOffset: {x: 0, y: 0.625}
   strengthRange:
-    min: 3
-    max: 6
+    min: 1
+    max: 3
   minStrength: 0.125
   cameraFollowSpeed: 12
   followBounds:
-    origin: {x: -1.5, y: -4.375}
+    origin: {x: -1.75, y: -4.375}
     size: {x: 3, y: 2}
   collisionBounds:
-  - origin: {x: -15, y: -10}
-    size: {x: 30, y: 5}
-  - origin: {x: -15, y: -5}
-    size: {x: 6, y: 8}
+  - origin: {x: -13.5, y: -10}
+    size: {x: 43.5, y: 5}
+  - origin: {x: -20.5, y: -5}
+    size: {x: 11, y: 8}
+  - origin: {x: 2.5, y: 6}
+    size: {x: 2.5, y: 0.25}
+  - origin: {x: -22, y: 3}
+    size: {x: 4.5, y: 11.25}
   cameraBounds:
-    origin: {x: -8.99, y: -4.99}
-    size: {x: 17.77528, y: 10}
+    origin: {x: -5.88, y: 7.3100004}
+    size: {x: 17.786753, y: 10}
   strength: 0.5
 --- !u!1 &6045653817931846407
 GameObject:
@@ -105,7 +109,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

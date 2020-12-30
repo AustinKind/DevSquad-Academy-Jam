@@ -760,7 +760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swingSpeed:
     min: 3
-    max: 9
+    max: 10
   jumpVelocity: 8
   minimumSwingRadius: 0.5
 --- !u!114 &5476306864017694314

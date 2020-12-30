@@ -102,16 +102,15 @@ public class GunController : MonoBehaviour
 
     Vector2 GetNewestInput(Vector2 input)
     {
-        Vector2 rawInput = Vector2Helper.Raw(input);
-        if (rawInput.magnitude > 1f)
+        if (input.magnitude > 1f)
         {
-            if (previousInput == Vector2.zero) rawInput.y = 0;
-            else rawInput -= previousInput;
+            if (previousInput == Vector2.zero) input.y = 0;
+            else input -= previousInput;
         }
         else
-            previousInput = rawInput;
+            previousInput = input;
 
-        return rawInput;
+        return input;
     }
 
     public void OpenWeaponWheel(bool open)
