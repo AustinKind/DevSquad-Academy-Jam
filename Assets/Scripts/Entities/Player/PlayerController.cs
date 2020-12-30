@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
     void SetActions()
     {
-        onMovement += movement.Move;
+        onMovement += movement.UpdateInput;
         onJump += movement.Jump;
 
         gunController.ActivateTimeScaler(() => { return input.SelectWeapon; });

@@ -96,7 +96,6 @@ public class Area
         
         if(overlap.size.y >= overlap.size.x)
         {
-            Debug.Log(overlap.origin.x);
             if (repel.Bounds.x - origin.x < 1f)
                 repel.origin.x = Mathf.Clamp(repel.origin.x, float.MinValue, origin.x - repel.size.x);
             else
@@ -104,7 +103,6 @@ public class Area
         }
         else
         {
-            Debug.Log(overlap.origin.y);
             if (repel.Bounds.y - origin.y < 1f)
                 repel.origin.y = Mathf.Clamp(repel.origin.y, float.MinValue, origin.y - repel.size.y);
             else

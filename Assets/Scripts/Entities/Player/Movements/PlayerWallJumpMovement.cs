@@ -67,7 +67,7 @@ public class PlayerWallJumpMovement : PlayerMovementType
         return (successfuls >= requiredSuccessfulCasts);
     }
 
-    public override void Movement(Vector2 input, ref Vector2 moveDirection, bool grounded)
+    public override void FixedMovement(ref Vector2 moveDirection, bool grounded)
     {
         moveDirection.y = slideMovement;
         slideMovement -= slideSpeed * Time.deltaTime;
@@ -79,16 +79,12 @@ public class PlayerWallJumpMovement : PlayerMovementType
         else if (dropTimer < dropLeeway)
             dropTimer += Time.deltaTime;
 
-        if(dropTimer <= 0)
+        if (dropTimer <= 0)
         {
             canGrabWall = false;
             dropTimer = dropLeeway;
             moveDirection.x = 0;
         }
-    }
-
-    public override void FixedMovement(ref Vector2 moveDirection, bool grounded)
-    {
     }
 
     public override void Jump(ref Vector2 moveDirection, bool grounded)

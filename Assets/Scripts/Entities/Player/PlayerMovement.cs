@@ -9,14 +9,13 @@ public class PlayerMovement : RigidbodyMovement
     [SerializeField] private float jumpVelocity = 8f;
 
     PlayerMovementType[] movements;
-    delegate void CurrentMovementAction(Vector2 input, ref Vector2 moveDirection, bool grounded);
     delegate void CurrentFixedMovementAction(ref Vector2 moveDirection, bool grounded);
     delegate void CurrentJumpAction(ref Vector2 moveDirection, bool grounded);
     CurrentFixedMovementAction currentFixedMovement = null;
-    CurrentMovementAction currentMovement = null;
     CurrentJumpAction currentJump = null;
 
     public bool freezeMovement = false;
+    Vector2 input;
 
     protected override void GetRequiredComponents()
     {
@@ -30,13 +29,11 @@ public class PlayerMovement : RigidbodyMovement
     private void Update()
     {
         currentJump = null;
-        currentMovement = null;
         currentFixedMovement = null;
         foreach (PlayerMovementType moveType in movements)
         {
             if(moveType.ShouldUseMovement())
             {
-                currentMovement = moveType.Movement;
                 currentFixedMovement = moveType.FixedMovement;
                 currentJump = moveType.Jump;
             }
@@ -74,12 +71,15 @@ public class PlayerMovement : RigidbodyMovement
             currentJump.Invoke(ref moveDirection, controller.IsGrounded);
     }
 
-    public void Move(Vector2 input)
+    public void UpdateInput(Vector2 i)
     {
-        if (currentMovement == null)
-            DefaultMovement(input);
-        else
-            currentMovement.Invoke(input, ref moveDirection, controller.IsGrounded);
+        input = i;
+
+        if (freezeMovement)
+            input = Vector2.zero;
+
+        foreach (PlayerMovementType moveType in movements)
+            moveType.SetInput = i;
     }
 
     protected override void FixedUpdate()
@@ -92,23 +92,22 @@ public class PlayerMovement : RigidbodyMovement
         moveDirection = controller.Move(moveDirection, UseThroughGround);
     }
 
-    void DefaultMovement(Vector2 input)
-    {
-        if (freezeMovement) return;
-        float x = input.x * moveSpeed;
-        if (controller.IsGrounded)
-            moveDirection.x = x;
-        else if (Mathf.Abs(input.x) > 0.02f)
-            moveDirection.x = x;
-    }
-
     void DefaultFixedMovement()
     {
+        float x = input.x * moveSpeed;
         if (!controller.IsGrounded)
+        {
+            if (Mathf.Abs(input.x) > 0.02f)
+                moveDirection.x = x;
             moveDirection.y -= gravity * Time.deltaTime;
+        }
         else
+        {
+            moveDirection.x = x;
             moveDirection.y = Mathf.Clamp(moveDirection.y, 0, float.MaxValue);
+        }
     }
+
     void DefaultJump()
     {
         if (!controller.IsGrounded) return;

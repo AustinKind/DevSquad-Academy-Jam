@@ -27,31 +27,6 @@ public class PlayerGrappledMovement : PlayerMovementType
         grapple.Unhook(true);
     }
 
-    public override void Movement(Vector2 input, ref Vector2 moveDirection, bool grounded)
-    {
-        //TODO
-        int direction = (flipped) ? -1 : 1;
-
-        float adjust = (direction * Time.deltaTime * speed);
-        float percent = Mathf.Clamp(difference.x / dis, -1f, 1f);
-        difference.y = -Mathf.Sqrt(1 - Mathf.Pow(percent, 2)) + 1;
-
-        Vector2 offset = new Vector2(percent, difference.y) * dis;
-        offset -= Vector2.up * dis;
-
-        adjust *= Mathf.Clamp(Mathf.Abs(difference.y - 1f), 0.1f, 1f);
-        difference.x = Mathf.Clamp(difference.x + adjust, -dis, dis);
-
-        if (flipped && difference.x <= -dis && difference.y >= 1f) flipped = false;
-        else if (!flipped && difference.x >= dis && difference.y >= 1f) flipped = true;
-
-        offset -= grapple.HookOffset;
-        Vector3 moveTo = (grapple.HookTransform.position + (Vector3)offset);
-        Debug.DrawLine(transform.position, moveTo, Color.red);
-        //PLACEHOLDER MOVEMENT
-        moveDirection = (moveTo - transform.position) / (Time.deltaTime * speed);
-    }
-
     public override bool ShouldUseMovement()
     {
         if (grapple == null) return false;
@@ -75,6 +50,27 @@ public class PlayerGrappledMovement : PlayerMovementType
 
     public override void FixedMovement(ref Vector2 moveDirection, bool grounded)
     {
+        //TODO
+        int direction = (flipped) ? -1 : 1;
+
+        float adjust = (direction * Time.deltaTime * speed);
+        float percent = Mathf.Clamp(difference.x / dis, -1f, 1f);
+        difference.y = -Mathf.Sqrt(1 - Mathf.Pow(percent, 2)) + 1;
+
+        Vector2 offset = new Vector2(percent, difference.y) * dis;
+        offset -= Vector2.up * dis;
+
+        adjust *= Mathf.Clamp(Mathf.Abs(difference.y - 1f), 0.1f, 1f);
+        difference.x = Mathf.Clamp(difference.x + adjust, -dis, dis);
+
+        if (flipped && difference.x <= -dis && difference.y >= 1f) flipped = false;
+        else if (!flipped && difference.x >= dis && difference.y >= 1f) flipped = true;
+
+        offset -= grapple.HookOffset;
+        Vector3 moveTo = (grapple.HookTransform.position + (Vector3)offset);
+        Debug.DrawLine(transform.position, moveTo, Color.red);
+        //PLACEHOLDER MOVEMENT
+        moveDirection = (moveTo - transform.position) / (Time.deltaTime * speed);
     }
 
 }

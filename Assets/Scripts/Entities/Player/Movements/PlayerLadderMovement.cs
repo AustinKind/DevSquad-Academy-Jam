@@ -43,7 +43,7 @@ public class PlayerLadderMovement : PlayerMovementType
         return CanClimbLadder;
     }
 
-    public override void Movement(Vector2 input, ref Vector2 moveDirection, bool grounded)
+    public override void FixedMovement(ref Vector2 moveDirection, bool grounded)
     {
         moveDirection.y = input.y * climbSpeed.y;
         if (!grounded)
@@ -56,10 +56,6 @@ public class PlayerLadderMovement : PlayerMovementType
         }
         else
             moveDirection.x = input.x * playerMovement.MoveSpeed;
-    }
-
-    public override void FixedMovement(ref Vector2 moveDirection, bool grounded)
-    {
     }
 
     public override void Jump(ref Vector2 moveDirection, bool grounded)
