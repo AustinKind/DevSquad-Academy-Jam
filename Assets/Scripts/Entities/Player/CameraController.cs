@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [Header("Camera Variables")]
-    [SerializeField] private Transform target;
+    private Transform target = null;
     [SerializeField] private Vector2 cameraOffset = Vector2.up;
     [SerializeField] private FloatRange strengthRange = new FloatRange(3, 6);
     [Range(0.125f, 1.0f), SerializeField] private float minStrength = 0.125f;
@@ -39,6 +39,8 @@ public class CameraController : MonoBehaviour
     private void GetRequiredComponents()
     {
         cam = GetComponentInChildren<Camera>();
+        if (GameObject.FindWithTag("Player"))
+            target = GameObject.FindWithTag("Player").transform;
     }
 
     void UpdateCamera()

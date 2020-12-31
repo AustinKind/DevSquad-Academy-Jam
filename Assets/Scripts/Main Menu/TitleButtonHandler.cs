@@ -38,7 +38,6 @@ public class TitleButtonHandler : MonoBehaviour {
         while (!loadGame.isDone)
             yield return null;
 
-        yield return new WaitForSeconds(0.5f);
         AsyncOperation unloadMenu = SceneManager.UnloadSceneAsync(0);
         while (!unloadMenu.isDone)
             yield return null;
