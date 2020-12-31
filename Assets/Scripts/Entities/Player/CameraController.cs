@@ -39,8 +39,6 @@ public class CameraController : MonoBehaviour
     private void GetRequiredComponents()
     {
         cam = GetComponentInChildren<Camera>();
-        if (GameObject.FindWithTag("Player"))
-            target = GameObject.FindWithTag("Player").transform;
     }
 
     void UpdateCamera()
@@ -57,6 +55,7 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         GetRequiredComponents();
+        target = PlayerStatusManager.Instance.Player.transform;
         UpdateCamera();
     }
 

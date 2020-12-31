@@ -8,8 +8,8 @@ public class InitializeScene : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = PlayerStatusManager.Instance.Player;
         player.SetActive(true);
-        player.transform.position = transform.position;
+        player.transform.position = transform.position; 
     }
 }

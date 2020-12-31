@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerStatusManager : MonoBehaviour
 {
     static PlayerStatusManager instance = null;
+    private GameObject player;
+    public GameObject Player => player; 
+
     private int hitpoints;
     public int HitPoints => hitpoints;
 
@@ -31,12 +34,13 @@ public class PlayerStatusManager : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void Awake() 
     {
         maxHitpoints = 5;
         hitpoints = 5;
         isAlive = true;
         levelNumber = 1;
+        player = GameObject.FindWithTag("Player");
     }
 
     public void ModifyHealth(int change)

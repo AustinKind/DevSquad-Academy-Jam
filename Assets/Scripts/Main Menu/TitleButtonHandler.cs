@@ -10,6 +10,7 @@ public class TitleButtonHandler : MonoBehaviour {
     public GameObject newGameBtn;
     public GameObject settingsBtn;
     public GameObject exitBtn;
+    public GameObject cam;
 
     bool loading = false;
 
@@ -33,14 +34,14 @@ public class TitleButtonHandler : MonoBehaviour {
         AsyncOperation loadPlayer = SceneManager.LoadSceneAsync("Load Player", LoadSceneMode.Additive);
         while (!loadPlayer.isDone)
             yield return null;
-
+        cam.GetComponent<AudioListener>().enabled = false;
         AsyncOperation loadGame = SceneManager.LoadSceneAsync("Game Scene 1", LoadSceneMode.Additive);
         while (!loadGame.isDone)
             yield return null;
 
         AsyncOperation unloadMenu = SceneManager.UnloadSceneAsync(0);
         while (!unloadMenu.isDone)
-            yield return null;
+            yield return null; 
     }
 
 
