@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    [SerializeField] public Sprite[] bombStates;
-    public bool isActivated = true;
+    [SerializeField] private Sprite[] bombStates;
+    private bool isActivated = true;
     private bool isTriggered = false;
-    private BombController controller;
+
+    public bool CanDefuse => (isActivated && isTriggered);
+    public bool Defused => (!isActivated);
+
+    SpriteRenderer sRend;
+    bool addedToBombList = false;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -23,16 +28,33 @@ public class Bomb : MonoBehaviour
 
     void Start ()
     {
-        controller = transform.parent.gameObject.GetComponent<BombController>();
+        sRend = GetComponent<SpriteRenderer>();
+        addedToBombList = false;
+
+
+        isActivated = true;
+        isTriggered = false;
     }
 
-    void Update()
+    private void Update()
     {
-        if (isTriggered && Input.GetKeyDown(KeyCode.E) == true)
+        if (!addedToBombList) TryToAddBomb();
+    }
+
+    void TryToAddBomb()
+    {
+        PlayerBombHandler bombHandler = null;
+        if((bombHandler = FindObjectOfType<PlayerBombHandler>()) != null)
         {
-            isActivated = false;
-            gameObject.GetComponent<SpriteRenderer>().sprite = bombStates[1];
-            controller.CheckCompletion();
+            bombHandler.AddBomb(this);
+            addedToBombList = true;
         }
     }
+
+    public void DefuseBomb()
+    {
+        isActivated = false;
+        sRend.sprite = bombStates[1];
+    }
+
 }

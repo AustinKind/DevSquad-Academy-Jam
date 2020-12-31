@@ -36,7 +36,17 @@ public class PlayerStatusManager : MonoBehaviour
         }
     }
 
-    private void Awake() 
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(this);
+    }
+
+    private void Start() 
     {
         maxHitpoints = 5;
         hitpoints = 5;
