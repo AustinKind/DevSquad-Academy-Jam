@@ -99,7 +99,7 @@ public class PlayerMovement : RigidbodyMovement
         {
             if (Mathf.Abs(input.x) > 0.02f)
                 moveDirection.x = x;
-            moveDirection.y -= gravity * Time.deltaTime;
+            moveDirection.y -= gravity * Time.fixedDeltaTime;
         }
         else
         {

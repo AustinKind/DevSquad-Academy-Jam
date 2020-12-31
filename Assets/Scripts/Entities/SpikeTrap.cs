@@ -125,7 +125,10 @@ public class SpikeTrap : MonoBehaviour
         Damageable dmgObj = null;
         if ((dmgObj = col.GetComponent<Damageable>()) != null)
         {
-           dmgObj.Hurt(damage);
+            PlayerDamage player = null;
+            if ((player = (dmgObj as PlayerDamage)) != null)
+                player.SetKnockback(new Vector2(player.transform.position.x - transform.position.x, 1f));
+            dmgObj.Hurt(damage);
         }
     }
 }

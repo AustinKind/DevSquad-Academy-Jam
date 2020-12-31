@@ -609,6 +609,7 @@ GameObject:
   - component: {fileID: 147734360}
   - component: {fileID: 7585233326061916162}
   - component: {fileID: 4780052488497457697}
+  - component: {fileID: 2219347704661423850}
   - component: {fileID: 5476306864017694314}
   - component: {fileID: 5476306864017694304}
   - component: {fileID: 6231352659882998826}
@@ -763,6 +764,19 @@ MonoBehaviour:
     max: 10
   jumpVelocity: 8
   minimumSwingRadius: 0.5
+--- !u!114 &2219347704661423850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5476306864017694315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63de2596de362e346b9937482ee09d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackForce: 12
 --- !u!114 &5476306864017694314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,5 +814,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invulnerabilityTime: 2
+  knockbackPercent: 0.5
   intervalTime: 0.25
   flashingColor: {r: 1, g: 0.1, b: 0.1, a: 0.39}

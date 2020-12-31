@@ -12,7 +12,7 @@ public class BombController : MonoBehaviour
     void Start()
     {
         bombs = GetComponentsInChildren<Bomb>();
-        player = PlayerStatusManager.Instance.Player;
+        player = PlayerStatusManager.Instance.Player.gameObject;
     }
 
     public void CheckCompletion ()

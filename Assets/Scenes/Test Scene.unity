@@ -4390,6 +4390,11 @@ PrefabInstance:
       propertyPath: wheelUI
       value: 
       objectReference: {fileID: 725079711}
+    - target: {fileID: 2219347704661423850, guid: 54829a041d2e7ce4baedbbda7a8663fb,
+        type: 3}
+      propertyPath: knockbackForce
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5476306863140430802, guid: 54829a041d2e7ce4baedbbda7a8663fb,
         type: 3}
       propertyPath: m_Color.a
@@ -5427,7 +5432,12 @@ PrefabInstance:
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: cameraBounds.size.x
-      value: 17.770563
+      value: 17.78559
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: cameraBounds.origin.x
+      value: 14.51
       objectReference: {fileID: 0}
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}

@@ -27,6 +27,11 @@ public class TimeScaleManager : MonoBehaviour
 
     List<TimeAdjuster> adjustments = new List<TimeAdjuster>();
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
     private void OnEnable()
     {
         //Initialize time and gravity to initial values

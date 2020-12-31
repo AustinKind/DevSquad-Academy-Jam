@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class InitializeScene : MonoBehaviour
 {
-    private GameObject player;
-
     void Start()
     {
-        player = PlayerStatusManager.Instance.Player;
+        GameObject player = PlayerStatusManager.Instance.Player.gameObject;
         player.SetActive(true);
         player.transform.position = transform.position; 
     }
