@@ -11,7 +11,8 @@ public class RigidbodyMovement : MonoBehaviour
     public float MoveSpeed => moveSpeed;
 
     [SerializeField] protected float gravity = 20f;
-    
+    public float Gravity => gravity;
+
     protected RigidbodyController controller;
     public RigidbodyController Controller => controller;
 

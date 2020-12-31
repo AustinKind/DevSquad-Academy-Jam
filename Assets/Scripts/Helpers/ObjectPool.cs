@@ -27,6 +27,10 @@ public class ObjectPool
     {
         poolParent = new GameObject().transform;
         poolParent.name = $"_{pooledObject.name}-Pool";
+        poolParent.position = Vector3.zero;
+
+        ObjectPoolParent parent = poolParent.gameObject.AddComponent<ObjectPoolParent>();
+        parent.Initialize(this);
     }
 
     public void ReturnToPool(int index)

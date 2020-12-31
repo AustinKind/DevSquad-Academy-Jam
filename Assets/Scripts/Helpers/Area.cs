@@ -96,14 +96,14 @@ public class Area
         
         if(overlap.size.y >= overlap.size.x)
         {
-            if (repel.Bounds.x - origin.x < 1f)
+            if (repel.Center.x <= Center.x)
                 repel.origin.x = Mathf.Clamp(repel.origin.x, float.MinValue, origin.x - repel.size.x);
             else
                 repel.origin.x = Mathf.Clamp(repel.origin.x, Bounds.x + 0.01f, float.MaxValue);
         }
         else
         {
-            if (repel.Bounds.y - origin.y < 1f)
+            if (repel.Center.y <= Center.y)
                 repel.origin.y = Mathf.Clamp(repel.origin.y, float.MinValue, origin.y - repel.size.y);
             else
                 repel.origin.y = Mathf.Clamp(repel.origin.y, Bounds.y + 0.01f, float.MaxValue);

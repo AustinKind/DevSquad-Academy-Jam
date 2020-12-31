@@ -10,7 +10,7 @@ public class MaterialValueAnimation : MonoBehaviour
 
 
     new Renderer renderer;
-    new Image uiImage;
+    Image uiImage;
     Material mat;
 
     private void Start()

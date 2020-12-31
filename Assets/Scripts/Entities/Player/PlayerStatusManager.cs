@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerStatusManager : MonoBehaviour
 {
     static PlayerStatusManager instance = null;
+    private PlayerController player;
+    public PlayerController Player => player; 
+
     private int hitpoints;
     public int HitPoints => hitpoints;
 
@@ -16,6 +19,8 @@ public class PlayerStatusManager : MonoBehaviour
 
     private int levelNumber;
     public int LevelNumber => levelNumber;
+
+    PlayerKnockbackMovement knockbackMovement;
 
     public static PlayerStatusManager Instance
     {
@@ -33,10 +38,22 @@ public class PlayerStatusManager : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(this);
+    }
+
+    private void Start() 
+    {
         maxHitpoints = 5;
         hitpoints = 5;
         isAlive = true;
         levelNumber = 1;
+        player = FindObjectOfType<PlayerController>();
+        knockbackMovement = player.GetComponent<PlayerKnockbackMovement>();
     }
 
     public void ModifyHealth(int change)
@@ -48,5 +65,11 @@ public class PlayerStatusManager : MonoBehaviour
             hitpoints = 0;
             isAlive = false;
         }
+    }
+
+    public void ApplyKnockback(Vector2 knocked, float time)
+    {
+        if(knockbackMovement != null)
+            knockbackMovement.KnockPlayer(knocked, time);
     }
 }
