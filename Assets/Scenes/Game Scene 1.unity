@@ -198,7 +198,7 @@ PrefabInstance:
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: cameraBounds.size.x
-      value: 17.78559
+      value: 17.772022
       objectReference: {fileID: 0}
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
@@ -233,7 +233,7 @@ PrefabInstance:
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: collisionBounds.Array.data[1].size.y
-      value: 8
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
@@ -243,7 +243,7 @@ PrefabInstance:
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: collisionBounds.Array.data[2].size.y
-      value: 8
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}

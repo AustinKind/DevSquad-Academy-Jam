@@ -54,6 +54,7 @@ public class GameSceneController : MonoBehaviour
             while (!gameScene.isDone) yield return null;
 
             loadedLevel = 3;
+            MoveToSpawnPoint();
             ActivatePlayer();
 
             yield return new WaitForSeconds(minLoadTime);
@@ -83,12 +84,14 @@ public class GameSceneController : MonoBehaviour
             while (!gameScene.isDone) yield return null;
 
             loadedLevel = index;
+            bool stillPlaying = (loadedLevel != 0);
+            if (stillPlaying) MoveToSpawnPoint();
 
             yield return new WaitForSeconds(minLoadTime);
             AsyncOperation unloadPrevious = SceneManager.UnloadSceneAsync(previous);
             while (!unloadPrevious.isDone) yield return null;
 
-            if (loadedLevel != 0)
+            if (stillPlaying)
                 ActivatePlayer();
             else //Back at the main menu
                 StartCoroutine(RemovePlayerObjects());
@@ -110,14 +113,18 @@ public class GameSceneController : MonoBehaviour
         while (!unloadPlayer.isDone) yield return null;
     }
 
+    public void MoveToSpawnPoint()
+    {
+        if (player == null) return;
+        GameObject spawn = GameObject.FindGameObjectWithTag("PlayerSpawnPoint");
+        Vector2 spawnPos = (spawn != null) ? (Vector2)spawn.transform.position : Vector2.zero;
+        player.transform.position = spawnPos;
+    }
+
     public void ActivatePlayer()
     {
         if (player == null) return;
         player.gameObject.SetActive(true);
-
-        GameObject spawn = GameObject.FindGameObjectWithTag("PlayerSpawnPoint");
-        Vector2 spawnPos = (spawn != null) ? (Vector2)spawn.transform.position : Vector2.zero;
-        player.transform.position = spawnPos;
     }
 
     public void DeactivatePlayer()

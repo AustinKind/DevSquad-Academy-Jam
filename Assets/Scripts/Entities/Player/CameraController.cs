@@ -56,7 +56,9 @@ public class CameraController : MonoBehaviour
     {
         GetRequiredComponents();
         target = PlayerStatusManager.Instance.Player.transform;
+
         UpdateCamera();
+        cameraBounds.SetOriginFromCenter(transform.position);
     }
 
     // Update is called once per frame

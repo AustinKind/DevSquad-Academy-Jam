@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99860abdf27c4254b8ba566a65574001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   cameraOffset: {x: 0, y: 0.625}
   strengthRange:
     min: 1
@@ -65,7 +64,7 @@ MonoBehaviour:
     size: {x: 4.5, y: 11.25}
   cameraBounds:
     origin: {x: -5.88, y: 7.3100004}
-    size: {x: 17.786753, y: 10}
+    size: {x: 17.772022, y: 10}
   strength: 0.5
 --- !u!1 &6045653817931846407
 GameObject:
@@ -78,6 +77,7 @@ GameObject:
   - component: {fileID: 6045653817931846410}
   - component: {fileID: 6045653817931846405}
   - component: {fileID: 6045653817931846404}
+  - component: {fileID: 3255009983379452727}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -150,3 +150,23 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6045653817931846407}
   m_Enabled: 1
+--- !u!114 &3255009983379452727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6045653817931846407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 32
+  m_RefResolutionX: 320
+  m_RefResolutionY: 240
+  m_UpscaleRT: 0
+  m_PixelSnapping: 1
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
