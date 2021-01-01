@@ -11,6 +11,7 @@ public class PlayerGrappledMovement : PlayerMovementType
     GrappleHook grapple;
     Vector2 difference;
     bool startedMoving = false;
+    bool keepMomentum = false;
     bool flipped = false;
     float speed;
     float dis;
@@ -41,7 +42,8 @@ public class PlayerGrappledMovement : PlayerMovementType
 
             float disPercent = (dis - minimumSwingRadius) / (grapple.GrappleLength - minimumSwingRadius);
             speed = swingSpeed.EvaluatePercent(disPercent);
-            Debug.Log(speed);
+
+            keepMomentum = true;
             startedMoving = true;
         }
 
@@ -60,11 +62,19 @@ public class PlayerGrappledMovement : PlayerMovementType
         Vector2 offset = new Vector2(percent, difference.y) * dis;
         offset -= Vector2.up * dis;
 
-        adjust *= Mathf.Pow(Mathf.Clamp(Mathf.Abs(difference.y - 1f), 0.1f, 1f), 2);
-        difference.x = Mathf.Clamp(difference.x + adjust, -dis, dis);
-
         if (flipped && difference.x <= -dis && difference.y >= 1f) flipped = false;
         else if (!flipped && difference.x >= dis && difference.y >= 1f) flipped = true;
+
+        if (keepMomentum)
+        {
+            if ((flipped && difference.x <= 0 && adjust < 0) || (!flipped && difference.x >= 0 && adjust > 0))
+                keepMomentum = false;
+        }
+
+        if(!keepMomentum)
+            adjust *= Mathf.Pow(Mathf.Clamp(Mathf.Abs(difference.y - 1f), 0.1f, 1f), 2);
+
+        difference.x = Mathf.Clamp(difference.x + adjust, -dis, dis);
 
         offset -= grapple.HookOffset;
         Vector3 moveTo = (grapple.HookTransform.position + (Vector3)offset);

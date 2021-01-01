@@ -15,13 +15,19 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Area followBounds;
     [SerializeField] private Area[] collisionBounds;
 
-    Vector3 followPos => target.position + (Vector3)cameraOffset;
-
     KeyValuePair<float, float> cameraInfo;
     public Area cameraBounds;
     Camera cam;
 
-    public float strength = 0.5f;
+    private float strength = 0.5f;
+    Vector3 followPos
+    {
+        get
+        {
+            if (target == null) return transform.position;
+            return target.position + (Vector3)cameraOffset;
+        }
+    }
 
     private void OnValidate()
     {

@@ -4935,7 +4935,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021318273}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.825, y: 6, z: 0}
+  m_LocalPosition: {x: 3.47, y: 5.933, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2027294678}
@@ -5432,7 +5432,7 @@ PrefabInstance:
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: cameraBounds.size.x
-      value: 17.78559
+      value: 17.772022
       objectReference: {fileID: 0}
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
@@ -5442,7 +5442,7 @@ PrefabInstance:
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: collisionBounds.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
@@ -5456,6 +5456,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
+      propertyPath: collisionBounds.Array.data[3].size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: collisionBounds.Array.data[3].size.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
       propertyPath: collisionBounds.Array.data[2].origin.x
       value: -22
       objectReference: {fileID: 0}
@@ -5463,6 +5473,16 @@ PrefabInstance:
         type: 3}
       propertyPath: collisionBounds.Array.data[2].origin.y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: collisionBounds.Array.data[3].origin.x
+      value: 2.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: collisionBounds.Array.data[3].origin.y
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 3997078745950439779, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}

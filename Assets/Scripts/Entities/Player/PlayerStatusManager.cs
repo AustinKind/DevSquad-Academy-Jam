@@ -6,8 +6,15 @@ public class PlayerStatusManager : MonoBehaviour
 {
     static PlayerStatusManager instance = null;
     private PlayerController player;
-    public PlayerController Player => player; 
-
+    public PlayerController Player 
+    {
+        get
+        {
+            if (player == null)
+                player = FindObjectOfType<PlayerController>();
+            return player;
+        }
+    }
     private int hitpoints;
     public int HitPoints => hitpoints;
 
