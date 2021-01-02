@@ -964,7 +964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   gravity: 20
-  jumpVelocity: 8
+  jumpVelocity: 9
   freezeMovement: 0
 --- !u!114 &147734360
 MonoBehaviour:
