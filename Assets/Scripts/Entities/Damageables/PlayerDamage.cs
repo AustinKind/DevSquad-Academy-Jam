@@ -11,6 +11,7 @@ public class PlayerDamage : Damageable
     [SerializeField] private Color flashingColor = new Color(1f, 0.1f, 0.1f, 0.39f);
     private bool isInvulnerable = false;
     private bool looping = true;
+    private AudioController audioController;
 
     Vector2 tempKnockback = Vector2.zero;
 
@@ -18,15 +19,17 @@ public class PlayerDamage : Damageable
     {
         base.Start();
         render = transform.Find("CharacterSprite").gameObject.GetComponent<SpriteRenderer>();
+        audioController = AudioController.Instance;
     }
 
     public override void Hurt(int dmg)
     {
         if (!isInvulnerable)
         {
+            audioController.PlaySound("hurt");
             base.Hurt(dmg);
             PlayerStatusManager.Instance.ModifyHealth(-dmg);
-            PlayerStatusManager.Instance.ApplyKnockback(tempKnockback, invulnerabilityTime * knockbackPercent);
+            PlayerStatusManager.Instance.ApplyKnockback(tempKnockback, invulnerabilityTime * knockbackPercent);   
             StartCoroutine("Invulnerable");
         }
     }

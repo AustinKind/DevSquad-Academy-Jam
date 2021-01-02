@@ -13,6 +13,7 @@ public class Bomb : MonoBehaviour
 
     SpriteRenderer sRend;
     bool addedToBombList = false;
+    private AudioController audioController;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -28,6 +29,7 @@ public class Bomb : MonoBehaviour
 
     void Start ()
     {
+        audioController = AudioController.Instance;
         sRend = GetComponent<SpriteRenderer>();
         addedToBombList = false;
 
@@ -54,6 +56,7 @@ public class Bomb : MonoBehaviour
     public void DefuseBomb()
     {
         isActivated = false;
+        audioController.PlaySound("deactivate");
         sRend.sprite = bombStates[1];
     }
 

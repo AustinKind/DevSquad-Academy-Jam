@@ -16,11 +16,12 @@ public class PlayerMovement : RigidbodyMovement
 
     public bool freezeMovement = false;
     Vector2 input;
+    private AudioController audioController;
 
     protected override void GetRequiredComponents()
     {
         base.GetRequiredComponents();
-
+        audioController = AudioController.Instance;
         movements = GetComponentsInChildren<PlayerMovementType>();
         foreach (PlayerMovementType moveType in movements)
             moveType.Initialize(this);
@@ -111,6 +112,7 @@ public class PlayerMovement : RigidbodyMovement
     void DefaultJump()
     {
         if (!controller.IsGrounded) return;
+        audioController.PlaySound("jump");
         moveDirection.y = jumpVelocity;
     }
 }

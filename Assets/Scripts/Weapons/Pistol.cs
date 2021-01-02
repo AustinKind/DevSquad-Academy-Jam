@@ -7,11 +7,13 @@ public class Pistol : Gun
     public GameObject bullet;
     public Vector2 spawnOffset = Vector2.up;
     public float bulletForce = 8f;
+    private AudioController audioController;
     ObjectPool bulletPool;
 
     public override void Start()
     {
         base.Start();
+        audioController = AudioController.Instance;
         if(bullet == null)
         {
             Debug.LogWarning("NO BULLET OBJECT ON PISTOL");
@@ -26,6 +28,7 @@ public class Pistol : Gun
         if (!canShootGun || bulletPool == null) return;
 
         //SHOOT
+        audioController.PlaySound("shoot");
         PooledObject bullet = bulletPool.GrabFromPool;
         Rigidbody2D bulletBody = bullet.obj.GetComponent<Rigidbody2D>();
 
