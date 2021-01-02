@@ -692,12 +692,12 @@ PrefabInstance:
     - target: {fileID: 4652320093570941146, guid: 361dd9785ebcd1741b7bdd6f83851138,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.78
+      value: 15.788
       objectReference: {fileID: 0}
     - target: {fileID: 4652320093570941146, guid: 361dd9785ebcd1741b7bdd6f83851138,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.092
+      value: -6.212
       objectReference: {fileID: 0}
     - target: {fileID: 4652320093570941146, guid: 361dd9785ebcd1741b7bdd6f83851138,
         type: 3}
@@ -752,7 +752,7 @@ PrefabInstance:
     - target: {fileID: 7520289475908075620, guid: 361dd9785ebcd1741b7bdd6f83851138,
         type: 3}
       propertyPath: m_Name
-      value: Spikes 2
+      value: Thorns 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 361dd9785ebcd1741b7bdd6f83851138, type: 3}
@@ -7134,12 +7134,12 @@ PrefabInstance:
     - target: {fileID: 4652320093570941146, guid: 361dd9785ebcd1741b7bdd6f83851138,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.786
+      value: 18.79
       objectReference: {fileID: 0}
     - target: {fileID: 4652320093570941146, guid: 361dd9785ebcd1741b7bdd6f83851138,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.087
+      value: -6.215
       objectReference: {fileID: 0}
     - target: {fileID: 4652320093570941146, guid: 361dd9785ebcd1741b7bdd6f83851138,
         type: 3}
@@ -7194,7 +7194,7 @@ PrefabInstance:
     - target: {fileID: 7520289475908075620, guid: 361dd9785ebcd1741b7bdd6f83851138,
         type: 3}
       propertyPath: m_Name
-      value: Spikes 3
+      value: Thorns 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 361dd9785ebcd1741b7bdd6f83851138, type: 3}
@@ -7219,12 +7219,12 @@ PrefabInstance:
     - target: {fileID: 4652320093570941146, guid: 361dd9785ebcd1741b7bdd6f83851138,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.214
+      value: -2.241
       objectReference: {fileID: 0}
     - target: {fileID: 4652320093570941146, guid: 361dd9785ebcd1741b7bdd6f83851138,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.083976
+      value: -6.217
       objectReference: {fileID: 0}
     - target: {fileID: 4652320093570941146, guid: 361dd9785ebcd1741b7bdd6f83851138,
         type: 3}
@@ -7266,10 +7266,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6742005689139121794, guid: 361dd9785ebcd1741b7bdd6f83851138,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8a271fa094d63a7449c3551425f64c6c,
+        type: 3}
+    - target: {fileID: 6742005689139121794, guid: 361dd9785ebcd1741b7bdd6f83851138,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742005689139121794, guid: 361dd9785ebcd1741b7bdd6f83851138,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 497639081
+      objectReference: {fileID: 0}
     - target: {fileID: 7520289475908075620, guid: 361dd9785ebcd1741b7bdd6f83851138,
         type: 3}
       propertyPath: m_Name
-      value: Spikes 1
+      value: Thorns 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 361dd9785ebcd1741b7bdd6f83851138, type: 3}
