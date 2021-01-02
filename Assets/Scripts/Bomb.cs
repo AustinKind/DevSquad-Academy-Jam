@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    [SerializeField] private Sprite[] bombStates;
     private bool isActivated = true;
     private bool isTriggered = false;
 
     public bool CanDefuse => (isActivated && isTriggered);
     public bool Defused => (!isActivated);
 
-    SpriteRenderer sRend;
     bool addedToBombList = false;
     private AudioController audioController;
+    private Animator anim;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -30,9 +29,8 @@ public class Bomb : MonoBehaviour
     void Start ()
     {
         audioController = AudioController.Instance;
-        sRend = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         addedToBombList = false;
-
 
         isActivated = true;
         isTriggered = false;
@@ -56,8 +54,8 @@ public class Bomb : MonoBehaviour
     public void DefuseBomb()
     {
         isActivated = false;
+        anim.SetTrigger("Defused");
         audioController.PlaySound("deactivate");
-        sRend.sprite = bombStates[1];
     }
 
 }

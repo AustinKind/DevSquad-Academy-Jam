@@ -143,4 +143,10 @@ public class GunController : MonoBehaviour
         TimeAdjuster adjuster = new TimeAdjuster(1f, checkBool);
         activatedTimeScaler = TimeScaleManager.Instance.AdjustTimeScale(adjuster);
     }
+
+    public void SetWeapon(int index)
+    {
+        currentWeapon = index;
+        AdjustWeapon(currentWeapon);
+    }
 }
