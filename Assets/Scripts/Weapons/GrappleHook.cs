@@ -26,7 +26,6 @@ public class GrappleHook : Gun
     public override void Start()
     {
         base.Start();
-        hookTransform.gameObject.SetActive(false);
         GetRequiredComponents();
 
         grappleLine.positionCount = 2;
@@ -46,7 +45,7 @@ public class GrappleHook : Gun
         hookTime = 0f;
         hooked = false;
         canShootGun = false;
-        hookTransform.gameObject.SetActive(grappling = true);
+        grappling = true;
     }
     public override void Reload()
     {
@@ -63,7 +62,7 @@ public class GrappleHook : Gun
         hookTransform.localPosition = hookOffset;
 
         grappleLine.SetPosition(1, hookOffset);
-        hookTransform.gameObject.SetActive(grappling = false);
+        grappling = false;
     }
 
     private void Update()
@@ -83,13 +82,14 @@ public class GrappleHook : Gun
 
             if (hooked) return;
 
-            hookTransform.localPosition = hookOffset + (grappleDir * adjust);
+            hookTransform.position = transform.TransformPoint(hookOffset) + (Vector3)(grappleDir * adjust);
 
             hookTime = Mathf.Clamp(hookTime + (Time.deltaTime / timeTillHookReturn), 0f, 1f);
             if (hookTime >= 1f)
             {
+                hookTransform.localPosition = hookOffset;
                 StartCoroutine(RegisterShot());
-                hookTransform.gameObject.SetActive(grappling = false);
+                grappling = false;
             }
         }
     }

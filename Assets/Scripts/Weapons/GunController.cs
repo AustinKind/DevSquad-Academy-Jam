@@ -73,7 +73,7 @@ public class GunController : MonoBehaviour
         currentGun = weaponCache[currentWeapon - 1];
     }
 
-    public void ShootInput(Vector2 input)
+    public Vector2 ShootInput(Vector2 input)
     {
         Vector2 singleInput = GetNewestInput(input);
         if (!semiShot && oldInput != singleInput)
@@ -98,6 +98,8 @@ public class GunController : MonoBehaviour
                 currentGun.Shoot(singleInput);
             }
         }
+
+        return singleInput;
     }
 
     Vector2 GetNewestInput(Vector2 input)

@@ -38,7 +38,7 @@ public class Sound
 public class AudioController : MonoBehaviour
 {
     static AudioController instance = null;
-    [SerializeField] Sound[] sounds;
+    [SerializeField] private List<Sound> sounds;
     private string currentSong = null;
 
     public static AudioController Instance
@@ -64,7 +64,7 @@ public class AudioController : MonoBehaviour
 
         DontDestroyOnLoad(this);
 
-        for (int i = 0; i < sounds.Length; i++)
+        for (int i = 0; i < sounds.Count; i++)
         {
             GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
             _go.transform.SetParent(transform);
@@ -74,43 +74,28 @@ public class AudioController : MonoBehaviour
 
     public void PlaySound(string _name)
     {
-        for (int i = 0; i < sounds.Length; i++)
-        {
-            if (sounds[i].name == _name)
-            {
-                sounds[i].Play();
-                return;
-            }
-        }
-        Debug.LogWarning("AudioController: Sound not found: " + _name);
+        Sound found = sounds.Find(x => x.name == _name);
+        if (found == null) Debug.LogWarning("AudioController: Sound not found: " + _name);
+        else found.Play();
     }
 
     public void StopSound(string _name)
     {
-        for (int i = 0; i < sounds.Length; i++)
-        {
-            if (sounds[i].name == _name)
-            {
-                sounds[i].Stop();
-                return;
-            }
-        }
-        Debug.LogWarning("AudioController: Sound not found: " + _name);
+        Sound found = sounds.Find(x => x.name == _name);
+        if (found == null) Debug.LogWarning("AudioController: Sound not found: " + _name);
+        else found.Stop();
     }
 
     public void PlaySong(string _name)
     {
-        for (int i = 0; i < sounds.Length; i++)
+        Sound found = sounds.Find(x => x.name == _name);
+        if (found == null) Debug.LogWarning("AudioController: Sound not found: " + _name);
+        else
         {
-            if (sounds[i].name == _name)
-            {
-                if (currentSong != null)
-                    StopSound(currentSong);
-                sounds[i].Play();
-                currentSong = _name;
-                return;
-            }
+            if (currentSong != null)
+                StopSound(currentSong);
+            currentSong = _name;
+            found.Play();
         }
-        Debug.LogWarning("AudioController: Sound not found: " + _name);
     }
 }

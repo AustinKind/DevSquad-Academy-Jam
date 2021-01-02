@@ -61,8 +61,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         ReadInputs();
-
-        animator.UpdateAnimator(movement.Controller.Rigidbody.velocity, movement.Controller.IsGrounded);
     }
 
     void ReadInputs()
@@ -82,6 +80,7 @@ public class PlayerController : MonoBehaviour
 
         gunController.OpenWeaponWheel(input.SelectWeapon);
 
-        gunController.ShootInput(input.Shoot);
+        Vector2 shoot = gunController.ShootInput(input.Shoot);
+        animator.UpdateAnimator(movement.Controller.Rigidbody.velocity, shoot, movement.Controller.IsGrounded);
     }
 }

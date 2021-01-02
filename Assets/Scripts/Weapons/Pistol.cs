@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pistol : Gun
 {
     public GameObject bullet;
-    public Vector2 spawnOffset = Vector2.up;
+    public Transform bulletSpawn;
     public float bulletForce = 8f;
     private AudioController audioController;
     ObjectPool bulletPool;
@@ -33,7 +33,7 @@ public class Pistol : Gun
         Rigidbody2D bulletBody = bullet.obj.GetComponent<Rigidbody2D>();
 
         float rot_z = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        bullet.obj.transform.position = transform.position + (Vector3)(spawnOffset + (dir * 0.325f));
+        bullet.obj.transform.position = bulletSpawn.position;
         bullet.obj.transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
         bulletBody.AddForce(dir * bulletForce, ForceMode2D.Impulse);
 
