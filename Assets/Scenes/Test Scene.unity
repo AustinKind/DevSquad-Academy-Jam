@@ -4504,6 +4504,11 @@ PrefabInstance:
       propertyPath: wheelUI
       value: 
       objectReference: {fileID: 725079711}
+    - target: {fileID: 4780052488497457697, guid: 54829a041d2e7ce4baedbbda7a8663fb,
+        type: 3}
+      propertyPath: jumpVelocity
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5476306864017694305, guid: 54829a041d2e7ce4baedbbda7a8663fb,
         type: 3}
       propertyPath: m_RootOrder

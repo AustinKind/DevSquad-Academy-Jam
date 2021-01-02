@@ -1405,7 +1405,7 @@ MonoBehaviour:
   swingSpeed:
     min: 3
     max: 10
-  jumpVelocity: 8
+  jumpVelocity: 9
   minimumSwingRadius: 0.5
 --- !u!114 &2219347704661423850
 MonoBehaviour:
