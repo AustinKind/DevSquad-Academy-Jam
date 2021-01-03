@@ -6,6 +6,7 @@ public class PlayerStatusManager : MonoBehaviour
 {
     static PlayerStatusManager instance = null;
     private PlayerController player;
+    private DeathController deathController;
     public PlayerController Player 
     {
         get
@@ -60,6 +61,7 @@ public class PlayerStatusManager : MonoBehaviour
         isAlive = true;
         levelNumber = 1;
         player = FindObjectOfType<PlayerController>();
+        deathController = player.gameObject.GetComponent<DeathController>();
         knockbackMovement = player.GetComponent<PlayerKnockbackMovement>();
     }
 
@@ -71,6 +73,14 @@ public class PlayerStatusManager : MonoBehaviour
         {
             hitpoints = 0;
             isAlive = false;
+            player.DisableInput(true);
+            StartCoroutine(DeathSequence());
+            IEnumerator DeathSequence()
+            {
+                deathController.Die();
+                yield return new WaitForSeconds(2);
+                GameSceneController.Instance.GameOver();
+            }
         }
     }
 

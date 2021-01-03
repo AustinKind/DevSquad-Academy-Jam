@@ -88,6 +88,8 @@ public class AudioController : MonoBehaviour
 
     public void PlaySong(string _name)
     {
+        if (currentSong == _name)
+            return;
         Sound found = sounds.Find(x => x.name == _name);
         if (found == null) Debug.LogWarning("AudioController: Sound not found: " + _name);
         else

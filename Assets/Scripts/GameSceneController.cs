@@ -8,6 +8,7 @@ public class GameSceneController : MonoBehaviour
     [SerializeField] private float minLoadTime = 0.5f;
     static GameSceneController instance;
     PlayerController player;
+    PortalController portal;
 
     int loadedLevel = 0;
 
@@ -49,6 +50,7 @@ public class GameSceneController : MonoBehaviour
             while (!loadPlayer.isDone) yield return null;
 
             player = PlayerStatusManager.Instance.Player;
+            portal = player.gameObject.GetComponent<PortalController>();
 
             AsyncOperation gameScene = SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
             while (!gameScene.isDone) yield return null;
@@ -62,6 +64,7 @@ public class GameSceneController : MonoBehaviour
             while (!unloadMenu.isDone) yield return null;
             AsyncOperation unloadLoading = SceneManager.UnloadSceneAsync(1);
             while (!unloadLoading.isDone) yield return null;
+            portal.ExitPortal();
         }
     }
 
@@ -75,6 +78,8 @@ public class GameSceneController : MonoBehaviour
         StartCoroutine(NextLevelLoad());
         IEnumerator NextLevelLoad()
         {
+            portal.EnterPortal();
+            yield return new WaitForSeconds(2.1f);
             DeactivatePlayer();
             FindObjectOfType<AudioListener>().enabled = false;
             AsyncOperation loadingScreen = SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
@@ -96,6 +101,34 @@ public class GameSceneController : MonoBehaviour
             else //Back at the main menu
                 StartCoroutine(RemovePlayerObjects());
 
+            AsyncOperation unloadLoading = SceneManager.UnloadSceneAsync(1);
+            while (!unloadLoading.isDone) yield return null;
+            if (stillPlaying)
+                portal.ExitPortal();
+        }
+    }
+
+    public void GameOver()
+    {
+        int previous = loadedLevel;
+        StartCoroutine(GameOverLoad());
+        IEnumerator GameOverLoad()
+        {
+            DeactivatePlayer();
+            FindObjectOfType<AudioListener>().enabled = false;
+            AsyncOperation loadingScreen = SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+            while (!loadingScreen.isDone) yield return null;
+
+            AsyncOperation gameScene = SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
+            while (!gameScene.isDone) yield return null;
+
+            loadedLevel = 0;
+
+            yield return new WaitForSeconds(minLoadTime);
+            Debug.Log("previous: " + previous);
+            AsyncOperation unloadPrevious = SceneManager.UnloadSceneAsync(previous);
+            while (!unloadPrevious.isDone) yield return null;
+            StartCoroutine(RemovePlayerObjects());
             AsyncOperation unloadLoading = SceneManager.UnloadSceneAsync(1);
             while (!unloadLoading.isDone) yield return null;
         }

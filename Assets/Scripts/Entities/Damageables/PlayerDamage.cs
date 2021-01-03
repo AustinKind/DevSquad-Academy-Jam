@@ -29,8 +29,9 @@ public class PlayerDamage : Damageable
             audioController.PlaySound("hurt");
             base.Hurt(dmg);
             PlayerStatusManager.Instance.ModifyHealth(-dmg);
-            PlayerStatusManager.Instance.ApplyKnockback(tempKnockback, invulnerabilityTime * knockbackPercent);   
-            StartCoroutine("Invulnerable");
+            PlayerStatusManager.Instance.ApplyKnockback(tempKnockback, invulnerabilityTime * knockbackPercent);
+            if (PlayerStatusManager.Instance.IsAlive)
+                StartCoroutine("Invulnerable");
         }
     }
 

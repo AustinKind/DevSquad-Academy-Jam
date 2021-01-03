@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6742005689139121794}
   - component: {fileID: 6664529987581383283}
   - component: {fileID: 8513789952430405186}
-  m_Layer: 0
-  m_Name: Spikes
+  m_Layer: 30
+  m_Name: Thorns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 497639081
-  m_SortingLayer: 2
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8a271fa094d63a7449c3551425f64c6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

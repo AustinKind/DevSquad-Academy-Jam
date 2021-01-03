@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     public delegate void OnNextLevelAction();
     public OnNextLevelAction onNextLevel;
 
+    private bool disabled = false;
+
     private void Start()
     {
         GetRequiredComponents();
@@ -63,11 +65,22 @@ public class PlayerController : MonoBehaviour
         ReadInputs();
     }
 
+    public void DisableInput(bool _disabled)
+    {
+        disabled = _disabled;
+    }
+
     void ReadInputs()
     {
         movement.UseThroughGround = (input.Movement.y >= -0.02f);
-        onMovement.Invoke(input.Movement);
-
+        if (!disabled)
+            onMovement.Invoke(input.Movement);
+        else
+        {
+            onMovement.Invoke(new Vector2(0, 0));
+            return;
+        }
+           
         if (input.Jump)
             onJump.Invoke();
         if (input.Defuse)

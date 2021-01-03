@@ -11,7 +11,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -769756622100142916}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 220, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6499175878994300943}
     m_Position: {x: 235, y: 65, z: 0}
@@ -57,7 +57,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Portal
+  m_Name: EnterPortal
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
