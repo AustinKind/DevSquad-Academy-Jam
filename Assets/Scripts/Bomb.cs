@@ -29,7 +29,7 @@ public class Bomb : MonoBehaviour
     void Start ()
     {
         audioController = AudioController.Instance;
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         addedToBombList = false;
 
         isActivated = true;
