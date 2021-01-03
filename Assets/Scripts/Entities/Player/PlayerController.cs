@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
         {
             if (sendDefuse.Invoke())
             {
+                //Defused all the bombs
                 GameSceneController.Instance.NextLevel();
             }
         }
