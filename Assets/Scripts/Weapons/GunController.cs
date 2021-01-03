@@ -22,7 +22,6 @@ public class GunController : MonoBehaviour
     int activatedTimeScaler = -1;
     bool wheelOpen = false;
 
-
     Gun currentGun;
     Vector2 previousInput = Vector2.zero;
     Vector2 oldInput = Vector2.zero;

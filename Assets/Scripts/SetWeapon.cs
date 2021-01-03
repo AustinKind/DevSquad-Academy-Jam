@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class SetWeapon : MonoBehaviour
 {
+    [SerializeField, Range(1,2)] private int setWeaponTo = 2;
     PlayerController playerController;
     GunController gunController;
 
     void Start()
     {
         playerController = PlayerStatusManager.Instance.Player;
-        Component[] gunControllers = playerController.gameObject.transform.GetComponentsInChildren<GunController>();
-        foreach(Component comp in gunControllers)
-        {
-            gunController = (GunController)comp;
-        }
-        Debug.Log(gunController);
-        gunController.SetWeapon(2);
+        gunController = playerController.GetComponentInChildren<GunController>();
+        gunController.SetWeapon(setWeaponTo);
     }
 }
