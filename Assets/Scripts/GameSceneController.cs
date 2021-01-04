@@ -88,14 +88,19 @@ public class GameSceneController : MonoBehaviour
 
             loadedLevel = index;
             bool stillPlaying = (loadedLevel != 0);
-            if (stillPlaying) MoveToSpawnPoint();
 
             yield return new WaitForSeconds(minLoadTime);
             AsyncOperation unloadPrevious = SceneManager.UnloadSceneAsync(previous);
             while (!unloadPrevious.isDone) yield return null;
 
             if (stillPlaying)
+            {
+                if(FindObjectOfType<ParalaxBackground>())
+                    FindObjectOfType<ParalaxBackground>().Initialize();
+                MoveToSpawnPoint();
+                yield return new WaitForSeconds(1);
                 ActivatePlayer();
+            }
             else //Back at the main menu
                 StartCoroutine(RemovePlayerObjects());
 
@@ -147,20 +152,24 @@ public class GameSceneController : MonoBehaviour
     {
         if (player == null) return;
         GameObject spawn = GameObject.FindGameObjectWithTag("PlayerSpawnPoint");
-        Vector2 spawnPos = (spawn != null) ? (Vector2)spawn.transform.position : Vector2.zero;
-        player.transform.position = spawnPos;
+
+        player.transform.SetParent(spawn.transform);
+        player.transform.localPosition = Vector3.zero;
+        player.transform.SetParent(null);
+        SceneManager.MoveGameObjectToScene(player.gameObject, SceneManager.GetSceneByName("Load Player"));
     }
 
     public void ActivatePlayer()
     {
         if (player == null) return;
-        FindObjectOfType<ParalaxBackground>().Initialize();
+        player.RemoveVelocity();
         player.gameObject.SetActive(true);
     }
 
     public void DeactivatePlayer()
     {
         if (player == null) return;
+        player.RemoveVelocity();
         player.onNextLevel.Invoke();
         player.gameObject.SetActive(false);
     }

@@ -23,7 +23,9 @@ public class HealthDamageable : Damageable
     {
         if(dmg > 0)
             base.Hurt(dmg);
-        StartCoroutine("Flash");
+
+        if (render != null)
+            StartCoroutine("Flash");
         health = Mathf.Clamp(health - dmg, 0, maxHealth);
         if (health <= 0)
             onHealthZeroed.Invoke();

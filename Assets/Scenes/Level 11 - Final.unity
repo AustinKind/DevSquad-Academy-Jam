@@ -3224,6 +3224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 75
   render: {fileID: 632218739}
+  flashingColor: {r: 1, g: 0.495283, b: 0.495283, a: 0.7019608}
   anim: {fileID: 632218738}
   deathSprite: {fileID: 21300000, guid: a03961b4bfae82d4ebad059f52addaa5, type: 3}
   boxCollider: {fileID: 632218737}
@@ -3394,9 +3395,8 @@ SpriteRenderer:
   m_SortingLayerID: 1077695251
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4582806900247545062, guid: 4ac5bd5d3cffbf1408cc756a60ec41da,
-    type: 3}
-  m_Color: {r: 0.29803923, g: 0.31764707, b: 0.36862746, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1c98c27404ccf9d4fa26c7ad24edb78a, type: 3}
+  m_Color: {r: 0.09411766, g: 0.13725491, b: 0.16078432, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -3507,9 +3507,8 @@ SpriteRenderer:
   m_SortingLayerID: 1077695251
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4582806900247545062, guid: 4ac5bd5d3cffbf1408cc756a60ec41da,
-    type: 3}
-  m_Color: {r: 0.29803923, g: 0.31764707, b: 0.36862746, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1c98c27404ccf9d4fa26c7ad24edb78a, type: 3}
+  m_Color: {r: 0.09411766, g: 0.13725491, b: 0.16078432, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2

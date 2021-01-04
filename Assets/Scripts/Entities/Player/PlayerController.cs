@@ -97,4 +97,9 @@ public class PlayerController : MonoBehaviour
         Vector2 shoot = gunController.ShootInput(input.Shoot);
         animator.UpdateAnimator(movement.Controller.Rigidbody.velocity, shoot, movement.Controller.IsGrounded);
     }
+
+    public void RemoveVelocity()
+    {
+        movement.RemoveVelocity();
+    }
 }

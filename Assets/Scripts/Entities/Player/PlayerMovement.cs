@@ -115,4 +115,10 @@ public class PlayerMovement : RigidbodyMovement
         audioController.PlaySound("jump");
         moveDirection.y = jumpVelocity;
     }
+
+    public void RemoveVelocity()
+    {
+        moveDirection = Vector2.zero;
+        Controller.Rigidbody.velocity = Vector2.zero;
+    }
 }
