@@ -60,6 +60,7 @@ public class GrappleHook : Gun
         hooked = false;
         hookTransform.SetParent(transform);
         hookTransform.localPosition = hookOffset;
+        hookTransform.localRotation = Quaternion.identity;
 
         grappleLine.SetPosition(1, hookOffset);
         grappling = false;
