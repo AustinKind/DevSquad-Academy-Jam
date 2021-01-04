@@ -37,16 +37,16 @@ public class ParalaxBackground : MonoBehaviour
             pos.x = (pos.x * 2f) - 1f;
             pos.x *= -maxDifference.x;
             pos.y *= maxDifference.y;
-            Debug.Log(pos);
             return pos;
         }
     }
 
 
-    private void Start()
+    public void Initialize()
     {
         cam = FindObjectOfType<CameraController>();
         transform.SetParent(cam.transform);
+        transform.localPosition = Vector3.zero;
 
         SetParalaxArea();
         SetParalaxBackgrounds(ParalaxPosition);

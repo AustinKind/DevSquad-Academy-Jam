@@ -35,6 +35,7 @@ public class SpikeTrap : MonoBehaviour
     /// <summary>
     /// Make sure the changes in the number of spikes adjust the rest of the components' variables
     /// </summary>
+#if UNITY_EDITOR
     private void OnValidate()
     {
         EditorApplication.delayCall += () =>
@@ -62,7 +63,7 @@ public class SpikeTrap : MonoBehaviour
             }
         };
     }
-
+#endif
     void GetRequiredComponents()
     {
         animator = GetComponent<Animator>();

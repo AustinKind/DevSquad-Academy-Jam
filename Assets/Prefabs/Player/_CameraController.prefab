@@ -64,8 +64,7 @@ MonoBehaviour:
     size: {x: 4.5, y: 11.25}
   cameraBounds:
     origin: {x: -5.88, y: 7.3100004}
-    size: {x: 17.772022, y: 10}
-  strength: 0.5
+    size: {x: 17.777779, y: 10}
 --- !u!1 &6045653817931846407
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,10 +162,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssetsPPU: 32
-  m_RefResolutionX: 320
-  m_RefResolutionY: 240
+  m_RefResolutionX: 576
+  m_RefResolutionY: 324
   m_UpscaleRT: 0
   m_PixelSnapping: 1
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
+  m_CropFrameX: 1
+  m_CropFrameY: 1
+  m_StretchFill: 1

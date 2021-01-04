@@ -157,6 +157,7 @@ public class GameSceneController : MonoBehaviour
     public void ActivatePlayer()
     {
         if (player == null) return;
+        FindObjectOfType<ParalaxBackground>().Initialize();
         player.gameObject.SetActive(true);
     }
 

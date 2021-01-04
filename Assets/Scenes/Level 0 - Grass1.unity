@@ -244,6 +244,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5872395825012379233, guid: 0803b9edc8bdb9548b6662cf8b88080e,
+        type: 3}
+      propertyPath: mapArea.size.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5872395825012379233, guid: 0803b9edc8bdb9548b6662cf8b88080e,
+        type: 3}
+      propertyPath: mapArea.size.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5872395825012379233, guid: 0803b9edc8bdb9548b6662cf8b88080e,
+        type: 3}
+      propertyPath: maxDifference.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5872395825012379233, guid: 0803b9edc8bdb9548b6662cf8b88080e,
+        type: 3}
+      propertyPath: mapArea.origin.x
+      value: -12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5872395825012379233, guid: 0803b9edc8bdb9548b6662cf8b88080e,
+        type: 3}
+      propertyPath: mapArea.origin.y
+      value: -6
+      objectReference: {fileID: 0}
     - target: {fileID: 5872395825012379239, guid: 0803b9edc8bdb9548b6662cf8b88080e,
         type: 3}
       propertyPath: m_Name
@@ -2910,7 +2935,7 @@ PrefabInstance:
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: cameraBounds.size.x
-      value: 17.771587
+      value: 18.750002
       objectReference: {fileID: 0}
     - target: {fileID: 1075634776539316449, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
@@ -3022,6 +3047,11 @@ PrefabInstance:
       propertyPath: collisionBounds.Array.data[4].origin.y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3255009983379452727, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: m_UpscaleRT
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3997078745950439779, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: m_RootOrder
@@ -3081,6 +3111,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: _CameraController
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045653817931846405, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045653817931846405, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: orthographic size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045653817931846405, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.36505955
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045653817931846405, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.38679248
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045653817931846405, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.23900856
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045653817931846405, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045653817931846405, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045653817931846405, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045653817931846405, guid: c2e67d806cb2eb44abf2198dfb640c20,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2e67d806cb2eb44abf2198dfb640c20, type: 3}
