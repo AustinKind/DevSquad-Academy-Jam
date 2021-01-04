@@ -64,8 +64,7 @@ MonoBehaviour:
     size: {x: 4.5, y: 11.25}
   cameraBounds:
     origin: {x: -5.88, y: 7.3100004}
-    size: {x: 17.772022, y: 10}
-  strength: 0.5
+    size: {x: 17.771587, y: 10}
 --- !u!1 &6045653817931846407
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +75,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6045653817931846410}
   - component: {fileID: 6045653817931846405}
-  - component: {fileID: 6045653817931846404}
   - component: {fileID: 3255009983379452727}
   m_Layer: 0
   m_Name: Main Camera
@@ -142,14 +140,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &6045653817931846404
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6045653817931846407}
-  m_Enabled: 1
 --- !u!114 &3255009983379452727
 MonoBehaviour:
   m_ObjectHideFlags: 0

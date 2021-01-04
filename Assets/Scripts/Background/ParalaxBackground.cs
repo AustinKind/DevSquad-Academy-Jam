@@ -37,7 +37,6 @@ public class ParalaxBackground : MonoBehaviour
             pos.x = (pos.x * 2f) - 1f;
             pos.x *= -maxDifference.x;
             pos.y *= maxDifference.y;
-            Debug.Log(pos);
             return pos;
         }
     }
