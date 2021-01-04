@@ -42,7 +42,6 @@ public class GameSceneController : MonoBehaviour
         StartCoroutine(StartGameLoad());
         IEnumerator StartGameLoad()
         {
-            FindObjectOfType<AudioListener>().enabled = false;
             AsyncOperation loadingScreen = SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
             while (!loadingScreen.isDone) yield return null;
 
@@ -81,7 +80,6 @@ public class GameSceneController : MonoBehaviour
             portal.EnterPortal();
             yield return new WaitForSeconds(2.1f);
             DeactivatePlayer();
-            FindObjectOfType<AudioListener>().enabled = false;
             AsyncOperation loadingScreen = SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
             while (!loadingScreen.isDone) yield return null;
 
@@ -115,7 +113,6 @@ public class GameSceneController : MonoBehaviour
         IEnumerator GameOverLoad()
         {
             DeactivatePlayer();
-            FindObjectOfType<AudioListener>().enabled = false;
             AsyncOperation loadingScreen = SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
             while (!loadingScreen.isDone) yield return null;
 

@@ -67,6 +67,8 @@ public class PlayerStatusManager : MonoBehaviour
 
     public void ModifyHealth(int change)
     {
+        if (!isAlive)
+            return;
         hitpoints = Mathf.Clamp(hitpoints + change, 0, maxHitpoints);
 
         if (hitpoints <= 0)
