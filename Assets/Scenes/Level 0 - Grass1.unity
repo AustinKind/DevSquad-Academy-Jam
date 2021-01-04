@@ -3129,11 +3129,6 @@ PrefabInstance:
       propertyPath: collisionBounds.Array.data[4].origin.y
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 3255009983379452727, guid: c2e67d806cb2eb44abf2198dfb640c20,
-        type: 3}
-      propertyPath: m_UpscaleRT
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3997078745950439779, guid: c2e67d806cb2eb44abf2198dfb640c20,
         type: 3}
       propertyPath: m_RootOrder
