@@ -2869,6 +2869,11 @@ MonoBehaviour:
     volume: 0.1
     pitch: 1
     loop: 1
+  - name: DarkTheme
+    clip: {fileID: 8300000, guid: f4598b691ef51344792defa8016486ac, type: 3}
+    volume: 0.07
+    pitch: 1
+    loop: 1
 --- !u!4 &1443474254
 Transform:
   m_ObjectHideFlags: 0
