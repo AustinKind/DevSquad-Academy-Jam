@@ -15,7 +15,7 @@ public class GunController : MonoBehaviour
     int previousWeapon = 1;
 
     [Header("Weapon Wheel")]
-    [SerializeField] private Animator wheelUI;
+    [SerializeField] public Animator wheelUI;
     [SerializeField] private AnimationCurve timeCurve;
     [SerializeField] private float timeAdjustSpeed = 4f;
     float timeScalerTimer = 0f;

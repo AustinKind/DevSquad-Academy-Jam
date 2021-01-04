@@ -1,0 +1,1448 @@
+fileFormatVersion: 2
+guid: 777b257ab0003634c94d5e430434f416
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -36840483400845586
+    second: EnterLeft_0
+  - first:
+      213: -972973843271670060
+    second: EnterLeft_1
+  - first:
+      213: 2228499320099240156
+    second: EnterLeft_2
+  - first:
+      213: 5409903552716737452
+    second: EnterLeft_3
+  - first:
+      213: 9131510900514451226
+    second: EnterLeft_4
+  - first:
+      213: 4051825730771950330
+    second: EnterLeft_5
+  - first:
+      213: 2883476327756102662
+    second: EnterLeft_6
+  - first:
+      213: 2867066796494973204
+    second: EnterLeft_7
+  - first:
+      213: 7713840193321993341
+    second: EnterLeft_8
+  - first:
+      213: -3230838445510348704
+    second: EnterLeft_9
+  - first:
+      213: 4979671928538038636
+    second: EnterLeft_10
+  - first:
+      213: -1986428815971168638
+    second: EnterLeft_11
+  - first:
+      213: -8614036980684330934
+    second: EnterLeft_12
+  - first:
+      213: 5142302700534923436
+    second: EnterLeft_13
+  - first:
+      213: 6233769990953501234
+    second: EnterLeft_14
+  - first:
+      213: 1665681602568946989
+    second: EnterLeft_15
+  - first:
+      213: -4527186956763938452
+    second: EnterLeft_16
+  - first:
+      213: -5745266552029096575
+    second: EnterLeft_17
+  - first:
+      213: 2610528759578956284
+    second: EnterLeft_18
+  - first:
+      213: -8346872789571039266
+    second: EnterLeft_19
+  - first:
+      213: -140939348451454658
+    second: EnterLeft_20
+  - first:
+      213: -9064154530175502232
+    second: EnterLeft_21
+  - first:
+      213: -4363435574231270708
+    second: EnterLeft_22
+  - first:
+      213: 5325947179016205650
+    second: EnterLeft_23
+  - first:
+      213: 2086142893568552196
+    second: EnterLeft_24
+  - first:
+      213: -4150749654606407712
+    second: EnterLeft_25
+  - first:
+      213: -3634851089053039593
+    second: EnterLeft_26
+  - first:
+      213: -8346529557304950664
+    second: EnterLeft_27
+  - first:
+      213: 8463688121108636288
+    second: EnterLeft_28
+  - first:
+      213: 780076558204232516
+    second: EnterLeft_29
+  - first:
+      213: -2212164337943194478
+    second: EnterLeft_30
+  - first:
+      213: -8155473753081912199
+    second: EnterLeft_31
+  - first:
+      213: 6514991511849731317
+    second: EnterLeft_32
+  - first:
+      213: 5480688133327545866
+    second: EnterLeft_33
+  - first:
+      213: 3657805502372802796
+    second: EnterLeft_34
+  - first:
+      213: 3079166707077254756
+    second: EnterLeft_35
+  - first:
+      213: -1015425992461009208
+    second: EnterLeft_36
+  - first:
+      213: 2134239301556484848
+    second: EnterLeft_37
+  - first:
+      213: 1788298213991477341
+    second: EnterLeft_38
+  - first:
+      213: 5357761595172146398
+    second: EnterLeft_39
+  - first:
+      213: 1672985704157386905
+    second: EnterLeft_40
+  - first:
+      213: -6670831847363860373
+    second: EnterLeft_41
+  - first:
+      213: -3420173008906453295
+    second: EnterLeft_42
+  - first:
+      213: 4616044387250532076
+    second: EnterLeft_43
+  - first:
+      213: 6988728024373389078
+    second: EnterLeft_44
+  - first:
+      213: -180081017775939438
+    second: EnterLeft_45
+  - first:
+      213: 2872549643176650152
+    second: EnterLeft_46
+  - first:
+      213: 2470016522463359675
+    second: EnterLeft_47
+  - first:
+      213: -930565773311033164
+    second: EnterLeft_48
+  - first:
+      213: -6119266037834838177
+    second: EnterLeft_49
+  - first:
+      213: -8511160592170151419
+    second: EnterLeft_50
+  - first:
+      213: 3080578002328802807
+    second: EnterLeft_51
+  - first:
+      213: -5382014086782385837
+    second: EnterLeft_52
+  - first:
+      213: 5853612499759422406
+    second: EnterLeft_53
+  - first:
+      213: 7342197176524858031
+    second: EnterLeft_54
+  - first:
+      213: -6350455734392629163
+    second: EnterLeft_55
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EnterLeft_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 126
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6f98986cd1d7ff0800000000000000
+      internalID: -36840483400845586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 126
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d6ab00d17d4f72f0800000000000000
+      internalID: -972973843271670060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 126
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd8f6b413583dee10800000000000000
+      internalID: 2228499320099240156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 126
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab0ec84e96d31b40800000000000000
+      internalID: 5409903552716737452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 126
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f65cf78c4a9be70800000000000000
+      internalID: 9131510900514451226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_5
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 126
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa137ed80afa3830800000000000000
+      internalID: 4051825730771950330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_6
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 126
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c762a517a240820800000000000000
+      internalID: 2883476327756102662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_7
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 126
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4196660af0ed9c720800000000000000
+      internalID: 2867066796494973204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 105
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74861149c01d0b60800000000000000
+      internalID: 7713840193321993341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 105
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0603ea03d81c923d0800000000000000
+      internalID: -3230838445510348704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_10
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 105
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c618e7e4c395b1540800000000000000
+      internalID: 4979671928538038636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_11
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 105
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e40743489ce64e0800000000000000
+      internalID: -1986428815971168638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_12
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 105
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a486b34510bc47880800000000000000
+      internalID: -8614036980684330934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_13
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 105
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca08ae0af012d5740800000000000000
+      internalID: 5142302700534923436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_14
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 105
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232064267ccc28650800000000000000
+      internalID: 6233769990953501234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_15
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 105
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d258606a790bd1710800000000000000
+      internalID: 1665681602568946989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c61cd4ae2733c21c0800000000000000
+      internalID: -4527186956763938452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_17
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 84
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1855f5ab286b440b0800000000000000
+      internalID: -5745266552029096575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_18
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 84
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf115ae53167a3420800000000000000
+      internalID: 2610528759578956284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_19
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 84
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edf8e38eb63f92c80800000000000000
+      internalID: -8346872789571039266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_20
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 84
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e311da8c8684b0ef0800000000000000
+      internalID: -140939348451454658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_21
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 84
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86834af8a77a53280800000000000000
+      internalID: -9064154530175502232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_22
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 84
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca74a5b676f173c0800000000000000
+      internalID: -4363435574231270708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_23
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 84
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25531c1cdb099e940800000000000000
+      internalID: 5325947179016205650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40debd9a8e773fc10800000000000000
+      internalID: 2086142893568552196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_25
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 63
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e71c954e239566c0800000000000000
+      internalID: -4150749654606407712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_26
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 63
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7144d89513a6e8dc0800000000000000
+      internalID: -3634851089053039593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_27
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 63
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8704a85e69b2b2c80800000000000000
+      internalID: -8346529557304950664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_28
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 63
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082af5ce08f057570800000000000000
+      internalID: 8463688121108636288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_29
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 63
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4436f552f7363da00800000000000000
+      internalID: 780076558204232516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_30
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 63
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294db145140dc41e0800000000000000
+      internalID: -2212164337943194478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_31
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 63
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 974e784c4dfe1de80800000000000000
+      internalID: -8155473753081912199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 42
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f40d7a1346e96a50800000000000000
+      internalID: 6514991511849731317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_33
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 42
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06efafb1d05f0c40800000000000000
+      internalID: 5480688133327545866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_34
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 42
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0766a79b223c230800000000000000
+      internalID: 3657805502372802796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_35
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 42
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46e8c835ec56bba20800000000000000
+      internalID: 3079166707077254756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_36
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 42
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ceb9a7907b78e1f0800000000000000
+      internalID: -1015425992461009208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_37
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 42
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fab3fa46575e9d10800000000000000
+      internalID: 2134239301556484848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_38
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 42
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d507d6530cf41d810800000000000000
+      internalID: 1788298213991477341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_39
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 42
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc477fb8c79a5a40800000000000000
+      internalID: 5357761595172146398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 21
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9989b9252a3a73710800000000000000
+      internalID: 1672985704157386905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_41
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 21
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68a38547c17c63a0800000000000000
+      internalID: -6670831847363860373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_42
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 21
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1de70cde4ca1980d0800000000000000
+      internalID: -3420173008906453295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_43
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 21
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceee081d9eb7f0040800000000000000
+      internalID: 4616044387250532076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_44
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 21
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 617e79c3c13fcf060800000000000000
+      internalID: 6988728024373389078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_45
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 21
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 290aca8b449308df0800000000000000
+      internalID: -180081017775939438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_46
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 21
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a528395ea85dd720800000000000000
+      internalID: 2872549643176650152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_47
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 21
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb236c2c0f2474220800000000000000
+      internalID: 2470016522463359675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b0c8a90c57f513f0800000000000000
+      internalID: -930565773311033164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_49
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f0eb8b5fff31ba0800000000000000
+      internalID: -6119266037834838177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_50
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5021565198842e980800000000000000
+      internalID: -8511160592170151419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_51
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5d0bb1f5960ca20800000000000000
+      internalID: 3080578002328802807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_52
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 351003504be3f45b0800000000000000
+      internalID: -5382014086782385837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_53
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb52f40e853c3150800000000000000
+      internalID: 5853612499759422406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_54
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2e3a17e69b4e560800000000000000
+      internalID: 7342197176524858031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnterLeft_55
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 0
+        width: 144
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5585fadd726aed7a0800000000000000
+      internalID: -6350455734392629163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

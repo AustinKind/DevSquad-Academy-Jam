@@ -26,4 +26,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 3 - Rock1.unity
     guid: 9688609ef543b174f8e13273014f4fe1
+  - enabled: 1
+    path: Assets/Scenes/Level 4 - Grass4.unity
+    guid: 95691d5995c0abf46ac676c516ecc50d
+  - enabled: 1
+    path: Assets/Scenes/Level 5 - Grass4.unity
+    guid: 3dab58f2cc328bf40ad6813af33cfe79
+  - enabled: 1
+    path: Assets/Scenes/Level 6 - Rock2.unity
+    guid: 5c44cbce27f4c8f439c4b2cc8c6c8371
+  - enabled: 1
+    path: Assets/Scenes/Level 7 - Rock2.unity
+    guid: d88f25bed670e894b8f969ce2703b0cd
+  - enabled: 1
+    path: Assets/Scenes/Level 8 - Grass3.unity
+    guid: 9d1b57624f31e6349b97de91e7c487cd
+  - enabled: 1
+    path: Assets/Scenes/Level 9 - Grass3.unity
+    guid: ca85886839276b141a3fdb33b152a9dd
+  - enabled: 1
+    path: Assets/Scenes/Level 10 - Rock3.unity
+    guid: c69225c8bf638804681daedd7f3801b1
+  - enabled: 1
+    path: Assets/Scenes/Level 11 - Final.unity
+    guid: c61991a2ffd26dd4c986ae23544ac7e8
   m_configObjects: {}

@@ -3234,7 +3234,8 @@ PrefabInstance:
       propertyPath: m_NormalizedViewPortRect.height
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6045653817931846404, guid: c2e67d806cb2eb44abf2198dfb640c20, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c2e67d806cb2eb44abf2198dfb640c20, type: 3}
 --- !u!1 &1992408892
 GameObject:

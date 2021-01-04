@@ -38,30 +38,30 @@ public class SpikeTrap : MonoBehaviour
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        //EditorApplication.delayCall += () =>
-        //{
-        //    try
-        //    {
-        //        GetRequiredComponents();
-        //        col.offset = new Vector2(-(numberOfSpikes - 1) / 2f, col.offset.y);
+        EditorApplication.delayCall += () =>
+        {
+            try
+            {
+                GetRequiredComponents();
+                col.offset = new Vector2(-(numberOfSpikes - 1) / 2f, col.offset.y);
 
-        //        bool multiple = (numberOfSpikes > 1);
-        //        rend.drawMode = multiple ? SpriteDrawMode.Tiled : SpriteDrawMode.Simple;
-        //        if (multiple)
-        //        {
-        //            rend.size = new Vector2(numberOfSpikes, 1);
-        //            rend.tileMode = SpriteTileMode.Continuous;
-        //        }
-        //        else
-        //            rend.size = Vector2.one;
+                bool multiple = (numberOfSpikes > 1);
+                rend.drawMode = multiple ? SpriteDrawMode.Tiled : SpriteDrawMode.Simple;
+                if (multiple)
+                {
+                    rend.size = new Vector2(numberOfSpikes, 1);
+                    rend.tileMode = SpriteTileMode.Continuous;
+                }
+                else
+                    rend.size = Vector2.one;
 
-        //        transform.localScale = Vector3.one;
-        //    }
-        //    catch (MissingReferenceException)
-        //    {
-        //        //Boi this is fucking ugly to have haha
-        //    }
-        //};
+                transform.localScale = Vector3.one;
+            }
+            catch (MissingReferenceException)
+            {
+                //Boi this is fucking ugly to have haha
+            }
+        };
     }
 #endif
     void GetRequiredComponents()
